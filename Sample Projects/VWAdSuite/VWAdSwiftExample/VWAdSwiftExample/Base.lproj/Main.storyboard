@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pg9-YR-DJe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--MoPub-->
+        <scene sceneID="B2B-UU-ajf">
+            <objects>
+                <viewController id="jtR-eA-RHA" customClass="VWMoPubServerViewController" customModule="VWAdSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kkd-RR-aEO"/>
+                        <viewControllerLayoutGuide type="bottom" id="jmm-TU-es9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Row-Bp-W6T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cv-Zp-hFh">
+                                <rect key="frame" x="213" y="50" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Cp6-Vi-h8K"/>
+                                    <constraint firstAttribute="width" constant="175" id="bGF-2B-d5W"/>
+                                </constraints>
+                                <state key="normal" title="Request Banner Ad"/>
+                                <connections>
+                                    <action selector="requestBannerAd" destination="jtR-eA-RHA" eventType="touchUpInside" id="2UX-Dc-Tpn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWn-6M-NlJ">
+                                <rect key="frame" x="213" y="70" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="pXV-D4-xre"/>
+                                    <constraint firstAttribute="height" constant="15" id="zI4-ET-dP6"/>
+                                </constraints>
+                                <state key="normal" title="Request Inline Ad"/>
+                                <connections>
+                                    <action selector="requestInlineAd" destination="jtR-eA-RHA" eventType="touchUpInside" id="eft-9c-xdq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-ZG-h2k">
+                                <rect key="frame" x="213" y="90" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="RKp-Mv-4pg"/>
+                                    <constraint firstAttribute="height" constant="15" id="ot6-sH-1QL"/>
+                                </constraints>
+                                <state key="normal" title="Request Interstitial Ad"/>
+                                <connections>
+                                    <action selector="requestInterstitialAd" destination="jtR-eA-RHA" eventType="touchUpInside" id="8d5-gP-cXc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MoPub Ad Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-h7-fj6">
+                                <rect key="frame" x="225" y="25" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1xq-Qa-WCq"/>
+                                    <constraint firstAttribute="height" constant="20" id="HBa-RO-tWN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jmm-TU-es9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="U1v-ZG-h2k" secondAttribute="bottom" constant="325" id="46S-o5-WJ7"/>
+                            <constraint firstItem="U1v-ZG-h2k" firstAttribute="centerX" secondItem="Row-Bp-W6T" secondAttribute="centerX" id="JFe-on-oBW"/>
+                            <constraint firstItem="8Cv-Zp-hFh" firstAttribute="top" secondItem="ufz-h7-fj6" secondAttribute="bottom" constant="5" id="NgD-HK-XZ0"/>
+                            <constraint firstItem="8Cv-Zp-hFh" firstAttribute="centerX" secondItem="Row-Bp-W6T" secondAttribute="centerX" id="Ywh-0d-fgu"/>
+                            <constraint firstItem="RWn-6M-NlJ" firstAttribute="top" secondItem="8Cv-Zp-hFh" secondAttribute="bottom" constant="5" id="Zy2-VE-WEg"/>
+                            <constraint firstItem="ufz-h7-fj6" firstAttribute="centerX" secondItem="Row-Bp-W6T" secondAttribute="centerX" id="c7y-ku-ESb"/>
+                            <constraint firstItem="RWn-6M-NlJ" firstAttribute="centerX" secondItem="Row-Bp-W6T" secondAttribute="centerX" id="dlw-WJ-sNi"/>
+                            <constraint firstItem="ufz-h7-fj6" firstAttribute="top" secondItem="Kkd-RR-aEO" secondAttribute="bottom" constant="5" id="kMD-iq-jwF"/>
+                            <constraint firstItem="U1v-ZG-h2k" firstAttribute="top" secondItem="RWn-6M-NlJ" secondAttribute="bottom" constant="5" id="lWn-pu-7Fk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MoPub" image="first" id="Rgz-Ow-Zzk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2C-Vp-q58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="-97"/>
+        </scene>
+        <!--DFP-->
+        <scene sceneID="v39-AY-syu">
+            <objects>
+                <viewController id="QtH-Dg-blU" customClass="VWDFPServerViewController" customModule="VWAdSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHX-yZ-edq"/>
+                        <viewControllerLayoutGuide type="bottom" id="mMG-RB-hhc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DzL-KL-l1J">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-Mx-uqc">
+                                <rect key="frame" x="213" y="50" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="3AI-Oq-Qvf"/>
+                                    <constraint firstAttribute="height" constant="15" id="gBa-KU-usV"/>
+                                </constraints>
+                                <state key="normal" title="Request Banner Ad"/>
+                                <connections>
+                                    <action selector="requestBannerAd" destination="QtH-Dg-blU" eventType="touchUpInside" id="4RD-XL-Gdq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSK-P4-Lme">
+                                <rect key="frame" x="213" y="70" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="6lm-gR-Fjo"/>
+                                    <constraint firstAttribute="width" constant="175" id="ENm-Pa-6Ik"/>
+                                </constraints>
+                                <state key="normal" title="Request Inline Ad"/>
+                                <connections>
+                                    <action selector="requestInlineAd" destination="QtH-Dg-blU" eventType="touchUpInside" id="M50-a8-U9D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exo-vF-kpi">
+                                <rect key="frame" x="213" y="90" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Eqx-ha-TTz"/>
+                                    <constraint firstAttribute="height" constant="15" id="yRo-Ne-c1v"/>
+                                </constraints>
+                                <state key="normal" title="Request Interstitial Ad"/>
+                                <connections>
+                                    <action selector="requestInterstitialAd" destination="QtH-Dg-blU" eventType="touchUpInside" id="L0y-2f-xFE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DFP Ad Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dk-8S-wMG">
+                                <rect key="frame" x="225" y="25" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="M1Y-R5-4sn"/>
+                                    <constraint firstAttribute="width" constant="150" id="eSk-lF-bs4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7YX-Mx-uqc" firstAttribute="centerX" secondItem="DzL-KL-l1J" secondAttribute="centerX" id="4et-Zh-EPm"/>
+                            <constraint firstItem="Exo-vF-kpi" firstAttribute="centerX" secondItem="DzL-KL-l1J" secondAttribute="centerX" id="FaH-4I-lf8"/>
+                            <constraint firstItem="DSK-P4-Lme" firstAttribute="centerX" secondItem="DzL-KL-l1J" secondAttribute="centerX" id="H0a-0Y-XID"/>
+                            <constraint firstItem="Exo-vF-kpi" firstAttribute="top" secondItem="DSK-P4-Lme" secondAttribute="bottom" constant="5" id="SJt-Zm-X3r"/>
+                            <constraint firstItem="DSK-P4-Lme" firstAttribute="top" secondItem="7YX-Mx-uqc" secondAttribute="bottom" constant="5" id="ZHr-wN-s9m"/>
+                            <constraint firstItem="3dk-8S-wMG" firstAttribute="top" secondItem="dHX-yZ-edq" secondAttribute="bottom" constant="5" id="oJy-5F-DZx"/>
+                            <constraint firstItem="3dk-8S-wMG" firstAttribute="centerX" secondItem="DzL-KL-l1J" secondAttribute="centerX" id="oK1-FA-PVX"/>
+                            <constraint firstItem="mMG-RB-hhc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Exo-vF-kpi" secondAttribute="bottom" constant="325" id="rl0-LW-fUt"/>
+                            <constraint firstItem="7YX-Mx-uqc" firstAttribute="top" secondItem="3dk-8S-wMG" secondAttribute="bottom" constant="5" id="tXb-K4-Fwd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DFP" image="first" id="ggD-ah-uNK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHf-3J-inH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="-757"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KJ5-zk-9Lg">
+            <objects>
+                <tabBarController id="Pg9-YR-DJe" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eE2-qj-gSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="XlX-5m-mpJ"/>
+                        <segue destination="QtH-Dg-blU" kind="relationship" relationship="viewControllers" id="JqH-Qy-Awm"/>
+                        <segue destination="jtR-eA-RHA" kind="relationship" relationship="viewControllers" id="xUW-g1-Ypi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDd-f2-TUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566" y="-427"/>
+        </scene>
+        <!--Verve-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VWVerveServerViewController" customModule="VWAdSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bH3-Nz-LjD">
+                                <rect key="frame" x="213" y="50" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="L76-VT-kmG"/>
+                                    <constraint firstAttribute="height" constant="15" id="qKM-Uk-oKk"/>
+                                </constraints>
+                                <state key="normal" title="Request Banner Ad"/>
+                                <connections>
+                                    <action selector="requestBannerAd" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXk-Xd-b28"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHg-eP-1U8">
+                                <rect key="frame" x="213" y="70" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="9vW-Ku-KyG"/>
+                                    <constraint firstAttribute="width" constant="175" id="qIe-Mw-eLA"/>
+                                </constraints>
+                                <state key="normal" title="Request Inline Ad"/>
+                                <connections>
+                                    <action selector="requestInlineAd" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Nv-vc-qn3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-lx-AcF">
+                                <rect key="frame" x="213" y="90" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="lLF-zE-EFL"/>
+                                    <constraint firstAttribute="width" constant="175" id="tjF-AQ-ASL"/>
+                                </constraints>
+                                <state key="normal" title="Request Interstitial Ad"/>
+                                <connections>
+                                    <action selector="requestInterstitialAd" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vou-uZ-70f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verve Ad Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-gn-fb9">
+                                <rect key="frame" x="225" y="25" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="HSo-oQ-lW7"/>
+                                    <constraint firstAttribute="width" constant="150" id="vFG-X0-gYl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UZa-lx-AcF" secondAttribute="bottom" constant="325" id="549-Gh-uoV"/>
+                            <constraint firstItem="wnH-gn-fb9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J1c-ZM-nLc"/>
+                            <constraint firstItem="UZa-lx-AcF" firstAttribute="top" secondItem="tHg-eP-1U8" secondAttribute="bottom" constant="5" id="J5J-05-DAQ"/>
+                            <constraint firstItem="tHg-eP-1U8" firstAttribute="top" secondItem="bH3-Nz-LjD" secondAttribute="bottom" constant="5" id="Jq8-sZ-oWp"/>
+                            <constraint firstItem="UZa-lx-AcF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RBu-YY-tch"/>
+                            <constraint firstItem="tHg-eP-1U8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSY-Uk-0FX"/>
+                            <constraint firstItem="bH3-Nz-LjD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xyg-Ku-bMI"/>
+                            <constraint firstItem="wnH-gn-fb9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="mx0-vW-4Tf"/>
+                            <constraint firstItem="bH3-Nz-LjD" firstAttribute="top" secondItem="wnH-gn-fb9" secondAttribute="bottom" constant="5" id="o43-fu-Qx1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Verve" image="first" id="26t-MP-sw7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566" y="392"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
+</document>
