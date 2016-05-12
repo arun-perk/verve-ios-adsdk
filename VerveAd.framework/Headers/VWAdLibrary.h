@@ -84,6 +84,11 @@ extern NSString * _Nonnull const kVWGADExtraPostalCodeKey;         // NSString
 @interface VWAdLibrary : NSObject
 
 /*!
+ * Returns version number of the library.
+ */
++ (nonnull NSString *)sdkVersion;
+
+/*!
  * If you've not disabled advertising attribution, you must implement
  * application:performFetchWithCompletionHandler: method of your application's delegate 
  * and call this method within it. If your application does not use background fetch itself,
@@ -140,13 +145,22 @@ extern NSString * _Nonnull const kVWGADExtraPostalCodeKey;         // NSString
 @property (nonatomic, readonly) BOOL gimbalProximityRunning;
 
 /*!
- * Set this property to limit number of region (beacon) monitoring slots available to the library.
- * Negative value indicates that it should register as many regions as allowed by iOS (20 in iOS7.1 and lower).
+ * Set this property to limit number of region monitoring slots available to the library.
+ * Negative value indicates that it should register as many regions as allowed by iOS.
  * Default value is -1.
  *
  * @warning You should not modify this value unless your app also monitores regions - a shared system resource.
  */
-@property (nonatomic, assign) NSInteger regionMonitoringSlotsLimit;
+@property (nonatomic, assign) NSInteger geofenceRegionMonitoringSlotsLimit;
+
+/*!
+ * Set this property to limit number of beacon monitoring slots available to the library.
+ * Negative value indicates that it should register as many regions as allowed by iOS.
+ * Default value is -1.
+ *
+ * @warning You should not modify this value unless your app also monitores beacons - a shared system resource.
+ */
+@property (nonatomic, assign) NSInteger beaconRegionMonitoringSlotsLimit;
 
 /*!
  * Latest acquired location. Updated on init and applicationDidBecomeActive with 1km desired accuracy.

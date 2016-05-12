@@ -27,6 +27,9 @@ extern VWAdSize const kVWAdSizeMediumRectangle;
 // 728 x 90
 extern VWAdSize const kVWAdSizeLeaderboard;
 
+// Undefined
+extern VWAdSize const kVWAdSizeUndefined;
+
 
 #pragma mark Custom Sizes
 

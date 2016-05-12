@@ -138,12 +138,6 @@ typedef enum {
 @property (nonatomic, assign) VWAdvertPosition adPosition;
 
 /*!
- * Affects the types of ads returned.
- * Only set this value if told to do so by Verve Ad Operations!
- */
-@property (nonatomic, assign) VWAdvertType adType;
-
-/*!
  * Use delegate object to observe advert's state and to show or hide view accordingly.
  */
 @property (nonatomic, weak, nullable) id <VWAdvertViewDelegate, NSObject> delegate;
