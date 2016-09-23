@@ -85,10 +85,12 @@
 
 - (void)advertViewDidReceiveAd:(VWAdvertView *)adView {
     //handle successful ad
+    NSLog(@"advertViewDidReceiveAd: %@", adView);
 }
 
 - (void)advertView:(VWAdvertView *)adView didFailToReceiveAdWithError:(NSError *)error {
     //handle error condition
+    NSLog(@"didFailToReceiveAdWithError: %@", adView);
 }
 
 #pragma mark - Interstitial Ad Code
@@ -108,21 +110,30 @@
 
 - (void)interstitialAdReceiveAd:(nonnull VWInterstitialAd *)interstitialAd {
     [self.interstitial presentFromViewController:self];
+    
+    NSLog(@"interstitialAdReceiveAd: %@", interstitialAd);
 }
 
 - (void)interstitialAd:(nonnull VWInterstitialAd *)interstitialAd didFailToReceiveAdWithError:(nullable NSError *)error {
     self.interstitial = nil;
+    
+    NSLog(@"didFailToReceiveAdWithError: %@", error);
 }
 
 - (void)interstitialAdWillPresentAd:(nonnull VWInterstitialAd *)interstitialAd {
+    NSLog(@"interstitialAdWillPresentAd: %@", interstitialAd);
 }
 
 - (void)interstitialAdDidDismissAd:(nonnull VWInterstitialAd *)interstitialAd {
     self.interstitial = nil;
+    
+    NSLog(@"interstitialAdDidDismissAd: %@", interstitialAd);
 }
 
 - (void)interstitialAdWillLeaveApplication:(nonnull VWInterstitialAd *)interstitialAd {
     self.interstitial = nil;
+    
+    NSLog(@"interstitialAdWillLeaveApplication: %@", interstitialAd);
 }
 
 @end

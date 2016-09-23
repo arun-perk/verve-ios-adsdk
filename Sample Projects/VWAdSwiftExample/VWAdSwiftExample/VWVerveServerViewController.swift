@@ -28,29 +28,30 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   //MARK: - Banner Ads
   
   func addBannerAdView() {
-    if bannerAdView == nil {
-      let adSize: VWAdSize = UI_USER_INTERFACE_IDIOM() == .Pad ? kVWAdSizeLeaderboard : kVWAdSizeBanner
-      
-      bannerAdView = VWAdvertView(size: adSize)
-      bannerAdView!.adPosition = VWAdvertPositionBottom
-      bannerAdView!.delegate = self
-      bannerAdView!.backgroundColor = UIColor.grayColor()
-      
-      let bounds : CGRect = view.bounds
-      var adFrame : CGRect = CGRectZero
-      
-      adFrame.size = bannerAdView!.sizeThatFits(bounds.size)
-      adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarController!.tabBar.frame.size.height
-      
-      bannerAdView!.frame = adFrame
-      
-      self.view?.addSubview(bannerAdView!)
-    }
+    guard bannerAdView == nil else { return }
+    
+    let adSize = UI_USER_INTERFACE_IDIOM() == .Pad ? kVWAdSizeLeaderboard : kVWAdSizeBanner
+    
+    bannerAdView = VWAdvertView(size: adSize)
+    bannerAdView?.adPosition = VWAdvertPositionBottom
+    bannerAdView?.delegate = self
+    bannerAdView?.backgroundColor = .grayColor()
+    
+    let bounds = view.bounds
+    var adFrame = CGRect.zero
+    
+    adFrame.size = bannerAdView!.sizeThatFits(bounds.size)
+    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarController!.tabBar.frame.size.height
+    
+    bannerAdView?.frame = adFrame
+    
+    self.view?.addSubview(bannerAdView!)
+    
   }
   
   @IBAction func requestBannerAd() {
-    if (bannerAdView != nil) {
-      bannerAdView!.loadRequest(VWAdRequest(contentCategoryID : VWContentCategory.NewsAndInformation))
+    if let bannerAdView = bannerAdView {
+      bannerAdView.loadRequest(VWAdRequest(contentCategoryID : .NewsAndInformation))
     }
   }
   
@@ -58,26 +59,26 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   //MARK: - Inline Ads
   
   func addInlineAdView() {
-    if (inlineAdView == nil) {
-      inlineAdView = VWAdvertView(size: kVWAdSizeMediumRectangle)
-      
-      inlineAdView!.adPosition = VWAdvertPositionInline
-      inlineAdView!.delegate = self
-      inlineAdView!.backgroundColor = UIColor.grayColor()
-      
-      let bounds : CGRect = view.bounds
-      var adFrame : CGRect = CGRectZero
-      
-      adFrame.size = inlineAdView!.sizeThatFits(bounds.size)
-      inlineAdView!.frame = CGRectMake((bounds.size.width - adFrame.size.width)/2, (bounds.size.height - adFrame.size.height)/2, adFrame.size.width, adFrame.size.height)
-      
-      self.view?.addSubview(inlineAdView!)
-    }
+    guard inlineAdView == nil else { return }
+    
+    inlineAdView = VWAdvertView(size: kVWAdSizeMediumRectangle)
+    
+    inlineAdView?.adPosition = VWAdvertPositionInline
+    inlineAdView?.delegate = self
+    inlineAdView?.backgroundColor = .grayColor()
+    
+    let bounds = view.bounds
+    var adFrame = CGRect.zero
+    
+    adFrame.size = inlineAdView!.sizeThatFits(bounds.size)
+    inlineAdView?.frame = CGRectMake((bounds.size.width - adFrame.size.width)/2, (bounds.size.height - adFrame.size.height)/2, adFrame.size.width, adFrame.size.height)
+    
+    self.view?.addSubview(inlineAdView!)
   }
   
   @IBAction func requestInlineAd() {
-    if (inlineAdView != nil) {
-      inlineAdView!.loadRequest(VWAdRequest(contentCategoryID : VWContentCategory.NewsAndInformation))
+    if let inlineAdView = inlineAdView {
+      inlineAdView.loadRequest(VWAdRequest(contentCategoryID : .NewsAndInformation))
     }
   }
   
@@ -85,12 +86,12 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   //MARK: - Interstitial Ads
   
   @IBAction func requestInterstitialAd() {
-    let adSize: VWInterstitialAdSize = UI_USER_INTERFACE_IDIOM() == .Pad ? VWInterstitialAdSizePad : VWInterstitialAdSizePhone
+    let adSize = UI_USER_INTERFACE_IDIOM() == .Pad ? VWInterstitialAdSizePad : VWInterstitialAdSizePhone
     
-    interstitial = VWInterstitialAd.init(size: adSize)
+    interstitial = VWInterstitialAd(size: adSize)
     interstitial?.delegate = self
     
-    let adRequest : VWAdRequest = VWAdRequest.init(contentCategoryID: VWContentCategory.NewsAndInformation)
+    let adRequest = VWAdRequest(contentCategoryID: .NewsAndInformation)
     
     interstitial?.loadRequest(adRequest)
   }

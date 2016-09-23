@@ -10,7 +10,6 @@
 #import <VerveAd/VerveAd.h>
 
 static NSString *const kPartnerKeyword = @"adsdkexample";
-static NSString *const kGimbalAPIKey = @"d26e62e8-475b-4a70-b111-82b59e376592";
 
 @interface AppDelegate () <VWSplashAdViewDelegate>
 
@@ -24,7 +23,6 @@ static NSString *const kGimbalAPIKey = @"d26e62e8-475b-4a70-b111-82b59e376592";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[VWAdLibrary shared] setPartnerKeyword:kPartnerKeyword];
-    [[VWAdLibrary shared] startGimbalProximityWithAPIKey:kGimbalAPIKey enableCommunicate:YES];
     
     self.splashAdView = [[VWSplashAdView alloc] init];
     self.splashAdView.delegate = self;

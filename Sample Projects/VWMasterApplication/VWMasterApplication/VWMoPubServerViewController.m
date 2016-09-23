@@ -14,6 +14,7 @@
 static NSString *const kBannerAdUnit = @"81e4362779af4f31b392223cece421a3";
 static NSString *const kInlineAdUnit = @"12a8caf3a56e40a5a883b36f910f8d96";
 static NSString *const kInterstitialAdUnit = @"400efb79cbfd4063a777d471ac25c795";
+static NSString *const kLeaderboardAdUnit = @"83023bd000f44a12a02de151b1664e30";
 
 @interface VWMoPubServerViewController () <MPAdViewDelegate, MPInterstitialAdControllerDelegate>
 
@@ -43,8 +44,9 @@ static NSString *const kInterstitialAdUnit = @"400efb79cbfd4063a777d471ac25c795"
 -(void)addBannerAdView {
     //determine size for device
     CGSize size = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? MOPUB_LEADERBOARD_SIZE : MOPUB_BANNER_SIZE;
+    NSString *adUnit = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? kLeaderboardAdUnit : kBannerAdUnit;
     
-    self.bannerAdView = [[MPAdView alloc] initWithAdUnitId:kBannerAdUnit size:size];
+    self.bannerAdView = [[MPAdView alloc] initWithAdUnitId:adUnit size:size];
     self.bannerAdView.delegate = self;
     self.bannerAdView.backgroundColor = [UIColor grayColor];
     
@@ -105,49 +107,66 @@ static NSString *const kInterstitialAdUnit = @"400efb79cbfd4063a777d471ac25c795"
 
 #pragma mark - MPAdViewDelegate
 
-- (void)adViewDidLoadAd:(MPAdView *)view
-{
+- (void)adViewDidLoadAd:(MPAdView *)view {
     NSLog(@"adViewDidReceiveAd:");
 }
 
-- (void)adViewDidFailToLoadAd:(MPAdView *)view
-{
+- (void)adViewDidFailToLoadAd:(MPAdView *)view {
     NSLog(@"adView:didFailToReceiveAdWithError:");
 }
 
-- (UIViewController *)viewControllerForPresentingModalView
-{
+- (UIViewController *)viewControllerForPresentingModalView {
+    NSLog(@"viewControllerForPresentingModalView");
     return self;
 }
 
-- (void)willPresentModalViewForAd:(MPAdView *)view
-{
+- (void)willPresentModalViewForAd:(MPAdView *)view {
     NSLog(@"willPresentModalViewForAd:");
 }
 
-- (void)didDismissModalViewForAd:(MPAdView *)view
-{
+- (void)didDismissModalViewForAd:(MPAdView *)view {
     NSLog(@"didDismissModalViewForAd:");
 }
 
-- (void)willLeaveApplicationFromAd:(MPAdView *)view
-{
+- (void)willLeaveApplicationFromAd:(MPAdView *)view {
     NSLog(@"willLeaveApplicationFromAd:");
 }
 
 
 #pragma mark - MPInterstitialAdControllerDelegate
 
-- (void)interstitialDidLoadAd:(MPInterstitialAdController *)interstitial
-{
+- (void)interstitialDidLoadAd:(MPInterstitialAdController *)interstitial {
     NSLog(@"interstitialDidLoadAd:");
     
     [interstitial showFromViewController:self];
 }
 
-- (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial
-{
+- (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial {
     NSLog(@"interstitialDidFailToLoadAd:");
+}
+
+- (void)interstitialWillAppear:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialWillAppear:");
+}
+
+- (void)interstitialDidAppear:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialDidAppear:");
+}
+
+- (void)interstitialWillDisappear:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialWillDisappear:");
+}
+
+- (void)interstitialDidDisappear:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialDidDisappear:");
+}
+
+- (void)interstitialDidExpire:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialDidExpire:");
+}
+
+- (void)interstitialDidReceiveTapEvent:(MPInterstitialAdController *)interstitial {
+    NSLog(@"interstitialDidReceiveTapEvent:");
 }
 
 @end

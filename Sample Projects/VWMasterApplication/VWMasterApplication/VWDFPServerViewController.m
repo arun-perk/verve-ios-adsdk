@@ -156,16 +156,35 @@ static NSString *const kCustomEventLabel = @"Verve Ad Network";
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
     NSLog(@"interstitialDidReceiveAd: %@", ad.adNetworkClassName);
-    
     [self.interstitialAdView presentFromRootViewController:self];
-    
-    self.interstitialAdView = nil;
 }
 
 - (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
     NSLog(@"interstitial:didFailToReceiveAdWithError: %@", [error localizedDescription]);
-    
     self.interstitialAdView = nil;
+}
+
+- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillPresentScreen: %@", ad.adNetworkClassName);
+}
+
+/// Called before the interstitial is to be animated off the screen.
+- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillDismissScreen: %@", ad.adNetworkClassName);
+}
+
+/// Called just after dismissing an interstitial and it has animated off the screen.
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialDidDismissScreen: %@", ad.adNetworkClassName);
+    self.interstitialAdView = nil;
+}
+
+/// Called just before the application will background or terminate because the user clicked on an
+/// ad that will launch another application (such as the App Store). The normal
+/// UIApplicationDelegate methods, like applicationDidEnterBackground:, will be called immediately
+/// before this.
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillLeaveApplication: %@", ad.adNetworkClassName);
 }
 
 @end

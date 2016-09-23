@@ -59,6 +59,7 @@ typedef enum : NSUInteger {
 @optional
 - (void)interstitialAd:(nonnull VWInterstitialAd *)interstitialAd didFailToReceiveAdWithError:(nullable NSError *)error;
 - (void)interstitialAdWillPresentAd:(nonnull VWInterstitialAd *)interstitialAd;
+- (void)interstitialAdWillDismissAd:(nonnull VWInterstitialAd *)interstitialAd;
 - (void)interstitialAdDidDismissAd:(nonnull VWInterstitialAd *)interstitialAd;
 - (void)interstitialAdWillLeaveApplication:(nonnull VWInterstitialAd *)interstitialAd;
 @end

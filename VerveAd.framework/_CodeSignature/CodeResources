@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/VWAdContainerView.h</key>
+		<data>
+		vqhXCade8Z/yBW9cdGcfM1pJpgE=
+		</data>
 		<key>Headers/VWAdLibrary.h</key>
 		<data>
-		2EYllI9Q/Fr9SfmQF54X+1zzh5I=
+		yIqxtJ5Eu9cjkWVf2Mf2vragryI=
 		</data>
 		<key>Headers/VWAdRequest.h</key>
 		<data>
@@ -22,7 +26,7 @@
 		</data>
 		<key>Headers/VWAdvertView.h</key>
 		<data>
-		hEhEPT6bhvsymBdJCIVgcJXQOxs=
+		Q51MIoss61qQ9ALMQ4QnlWoywz8=
 		</data>
 		<key>Headers/VWContentCategory.h</key>
 		<data>
@@ -38,7 +42,7 @@
 		</data>
 		<key>Headers/VWInterstitialAd.h</key>
 		<data>
-		uJ7qRa8giEH2s0TV/IvEEx3O2r0=
+		i64yQXXuTs7Mo7+to0TWON4rGbU=
 		</data>
 		<key>Headers/VWInterstitialAdManager.h</key>
 		<data>
@@ -62,11 +66,11 @@
 		</data>
 		<key>Headers/VerveAd.h</key>
 		<data>
-		VyH+DH1FuDGf7dbCGdgTExDDR80=
+		XGLuWeTGY2QCrpi7PzyfFFH3jMs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RuJV5NlI8cfS/fk9aFKFbUtDrcU=
+		6j6ygMJrWEjPoAivM5Qe7eoIHyk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,70 +79,193 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/VWAdContainerView.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vqhXCade8Z/yBW9cdGcfM1pJpgE=
+			</data>
+			<key>hash2</key>
+			<data>
+			zqd9SFYF604Bh8t30Bzimq7K9J8clIQR7tLZx531t2w=
+			</data>
+		</dict>
 		<key>Headers/VWAdLibrary.h</key>
-		<data>
-		2EYllI9Q/Fr9SfmQF54X+1zzh5I=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			yIqxtJ5Eu9cjkWVf2Mf2vragryI=
+			</data>
+			<key>hash2</key>
+			<data>
+			mGJm3ddlVWbLOPM5KJfMCtBxYkmfOcpifDYWiOuBm60=
+			</data>
+		</dict>
 		<key>Headers/VWAdRequest.h</key>
-		<data>
-		7B74XvhfSBcxSVwe009JRpOXgAQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			7B74XvhfSBcxSVwe009JRpOXgAQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			ovYG7AdYvl1d5egEVPCQU20xfxFPb+3Fbt5SsmJxFNI=
+			</data>
+		</dict>
 		<key>Headers/VWAdSize.h</key>
-		<data>
-		5fJNFHth2f7yrgCevAd+0jhBV3c=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			5fJNFHth2f7yrgCevAd+0jhBV3c=
+			</data>
+			<key>hash2</key>
+			<data>
+			UzGUHmGSRid3EwPC6T/m40QJK+io4hGiLqcI9PeAMZQ=
+			</data>
+		</dict>
 		<key>Headers/VWAdminFunctionsManager.h</key>
-		<data>
-		ZAGOz21hvdH6ZmHirqG64jhOx7E=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZAGOz21hvdH6ZmHirqG64jhOx7E=
+			</data>
+			<key>hash2</key>
+			<data>
+			3YAlS7YRnMlCx8hABSWoBf4w4emCv5j5aKdPm3ZMZAw=
+			</data>
+		</dict>
 		<key>Headers/VWAdvertView.h</key>
-		<data>
-		hEhEPT6bhvsymBdJCIVgcJXQOxs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Q51MIoss61qQ9ALMQ4QnlWoywz8=
+			</data>
+			<key>hash2</key>
+			<data>
+			5wSCn9hYReWNib2/bPfsyVaQJdUQoq5FtePghLj6eSQ=
+			</data>
+		</dict>
 		<key>Headers/VWContentCategory.h</key>
-		<data>
-		tlKZiHNZaw3AT09GVtittbdjlf8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			tlKZiHNZaw3AT09GVtittbdjlf8=
+			</data>
+			<key>hash2</key>
+			<data>
+			+IrI24CgVYvrz+MPi2afaAo96J17Wji8fY2MzAF1GtM=
+			</data>
+		</dict>
 		<key>Headers/VWFullscreenAdViewController.h</key>
-		<data>
-		sVaXpOFZLCEfKbUXmzQgl/Y4TBY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			sVaXpOFZLCEfKbUXmzQgl/Y4TBY=
+			</data>
+			<key>hash2</key>
+			<data>
+			rqGAp6RQ8N8acK31XOLrf5LBss5JibusgoGqsGZOkFI=
+			</data>
+		</dict>
 		<key>Headers/VWInterstitial.h</key>
-		<data>
-		V4NZ6nbaltkETsdTpu/PBOpePaM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			V4NZ6nbaltkETsdTpu/PBOpePaM=
+			</data>
+			<key>hash2</key>
+			<data>
+			HqgnmGd/TSlIBTQW9gdJHYwEktscd4KvhsD6LHVhk+o=
+			</data>
+		</dict>
 		<key>Headers/VWInterstitialAd.h</key>
-		<data>
-		uJ7qRa8giEH2s0TV/IvEEx3O2r0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			i64yQXXuTs7Mo7+to0TWON4rGbU=
+			</data>
+			<key>hash2</key>
+			<data>
+			m1nMjnvV9oFM5e4KS27AeRaImB909ZR0EiaVexfcPm4=
+			</data>
+		</dict>
 		<key>Headers/VWInterstitialAdManager.h</key>
-		<data>
-		Wy16Ham7l3W043ynw2x3SLw7+Is=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Wy16Ham7l3W043ynw2x3SLw7+Is=
+			</data>
+			<key>hash2</key>
+			<data>
+			KMFCLz1iRtVs9n0h5XbxVncD3M0vzVII7uOXaYhI494=
+			</data>
+		</dict>
 		<key>Headers/VWInterstitialManager.h</key>
-		<data>
-		QUMQU2o531mf+Nt2IQJDhEbv/y4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			QUMQU2o531mf+Nt2IQJDhEbv/y4=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ybxn5w5Qs4g9C887UdBGno9Pbi53nbEEQ9rSo66bB7A=
+			</data>
+		</dict>
 		<key>Headers/VWSplashAdManager.h</key>
-		<data>
-		UhIdDDEUN7hsehJKV+ztML/0EB4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			UhIdDDEUN7hsehJKV+ztML/0EB4=
+			</data>
+			<key>hash2</key>
+			<data>
+			W+TgFkPm1eyIAZ8qFm7IKS+c4XtPlRHyqslHIEGT/EM=
+			</data>
+		</dict>
 		<key>Headers/VWSplashAdView.h</key>
-		<data>
-		472erbcn+bGNDv93CwNmSo/oUN4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			472erbcn+bGNDv93CwNmSo/oUN4=
+			</data>
+			<key>hash2</key>
+			<data>
+			69Itm4bPjs6lfB7h3/RamBPG+pC/Bzhnf86NkZtvCiI=
+			</data>
+		</dict>
 		<key>Headers/VWSplashAdvertView.h</key>
-		<data>
-		jKKHM46niSJ5QREY4r2mJcDVyd8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			jKKHM46niSJ5QREY4r2mJcDVyd8=
+			</data>
+			<key>hash2</key>
+			<data>
+			SLKa0L8lFoPLkNECIFq3j2JIBoQo/0iBFLhwjpx87zc=
+			</data>
+		</dict>
 		<key>Headers/VerveAd.h</key>
-		<data>
-		VyH+DH1FuDGf7dbCGdgTExDDR80=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			XGLuWeTGY2QCrpi7PzyfFFH3jMs=
+			</data>
+			<key>hash2</key>
+			<data>
+			pyO/FMx9cbRvKsYzd4SZ/vabTbP8Yli6Pwk18asq+rg=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		GxIbR7WkVQ/nMPtTJWALxlmZpp8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			GxIbR7WkVQ/nMPtTJWALxlmZpp8=
+			</data>
+			<key>hash2</key>
+			<data>
+			wZIR1IIglQDeYV4hnJWy6ocRhcZanxu1iAfCUcxYlBI=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

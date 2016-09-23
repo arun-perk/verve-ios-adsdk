@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		704C532F1D6647450010499C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C532E1D6647450010499C /* MobileCoreServices.framework */; };
+		70571CA81D66467600482BE9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70571CA71D66467600482BE9 /* CoreTelephony.framework */; };
+		ECB7D45C1D21394600C2A0AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D45B1D21394600C2A0AE /* main.m */; };
+		ECB7D45F1D21394600C2A0AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D45E1D21394600C2A0AE /* AppDelegate.m */; };
+		ECB7D4621D21394600C2A0AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D4611D21394600C2A0AE /* ViewController.m */; };
+		ECB7D4651D21394600C2A0AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB7D4631D21394600C2A0AE /* Main.storyboard */; };
+		ECB7D4671D21394600C2A0AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB7D4661D21394600C2A0AE /* Assets.xcassets */; };
+		ECB7D46A1D21394600C2A0AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB7D4681D21394600C2A0AE /* LaunchScreen.storyboard */; };
+		ECB7D4871D21430D00C2A0AE /* libVerveAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4831D2142F500C2A0AE /* libVerveAd.a */; };
+		ECB7D49B1D21440900C2A0AE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4891D21440900C2A0AE /* CoreBluetooth.framework */; };
+		ECB7D49C1D21440900C2A0AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48A1D21440900C2A0AE /* MediaPlayer.framework */; };
+		ECB7D49D1D21440900C2A0AE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48B1D21440900C2A0AE /* Security.framework */; };
+		ECB7D49E1D21440900C2A0AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48C1D21440900C2A0AE /* Social.framework */; };
+		ECB7D49F1D21440900C2A0AE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48D1D21440900C2A0AE /* CoreData.framework */; };
+		ECB7D4A01D21440900C2A0AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48E1D21440900C2A0AE /* CoreLocation.framework */; };
+		ECB7D4A11D21440900C2A0AE /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D48F1D21440900C2A0AE /* PassKit.framework */; };
+		ECB7D4A21D21440900C2A0AE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4901D21440900C2A0AE /* EventKit.framework */; };
+		ECB7D4A31D21440900C2A0AE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4911D21440900C2A0AE /* AdSupport.framework */; };
+		ECB7D4A41D21440900C2A0AE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4921D21440900C2A0AE /* MessageUI.framework */; };
+		ECB7D4A51D21440900C2A0AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4931D21440900C2A0AE /* QuartzCore.framework */; };
+		ECB7D4A61D21440900C2A0AE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4941D21440900C2A0AE /* CoreFoundation.framework */; };
+		ECB7D4A71D21440900C2A0AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4951D21440900C2A0AE /* CoreGraphics.framework */; };
+		ECB7D4A81D21440900C2A0AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4961D21440900C2A0AE /* UIKit.framework */; };
+		ECB7D4AA1D21440A00C2A0AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4981D21440900C2A0AE /* Foundation.framework */; };
+		ECB7D4AB1D21440A00C2A0AE /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4991D21440900C2A0AE /* WatchConnectivity.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ECB7D4AC1D21440A00C2A0AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D49A1D21440900C2A0AE /* SystemConfiguration.framework */; };
+		ECB7D4AF1D21441E00C2A0AE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4AD1D21441E00C2A0AE /* libz.tbd */; };
+		ECB7D4B01D21441E00C2A0AE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB7D4AE1D21441E00C2A0AE /* libxml2.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		704C532E1D6647450010499C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		70571CA71D66467600482BE9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		ECB7D4571D21394600C2A0AE /* VWAdStaticLibraryExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VWAdStaticLibraryExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECB7D45B1D21394600C2A0AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECB7D45D1D21394600C2A0AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ECB7D45E1D21394600C2A0AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ECB7D4601D21394600C2A0AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ECB7D4611D21394600C2A0AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECB7D4641D21394600C2A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECB7D4661D21394600C2A0AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECB7D4691D21394600C2A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECB7D46B1D21394600C2A0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB7D4741D2142E500C2A0AE /* VWAdContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdContainerView.h; path = "../../Extras/Static Library/VWAdContainerView.h"; sourceTree = "<group>"; };
+		ECB7D4751D2142E500C2A0AE /* VWAdLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdLibrary.h; path = "../../Extras/Static Library/VWAdLibrary.h"; sourceTree = "<group>"; };
+		ECB7D4761D2142E500C2A0AE /* VWAdminFunctionsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdminFunctionsManager.h; path = "../../Extras/Static Library/VWAdminFunctionsManager.h"; sourceTree = "<group>"; };
+		ECB7D4771D2142E500C2A0AE /* VWAdRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdRequest.h; path = "../../Extras/Static Library/VWAdRequest.h"; sourceTree = "<group>"; };
+		ECB7D4781D2142E500C2A0AE /* VWAdSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdSize.h; path = "../../Extras/Static Library/VWAdSize.h"; sourceTree = "<group>"; };
+		ECB7D4791D2142E500C2A0AE /* VWAdvertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWAdvertView.h; path = "../../Extras/Static Library/VWAdvertView.h"; sourceTree = "<group>"; };
+		ECB7D47A1D2142E500C2A0AE /* VWContentCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWContentCategory.h; path = "../../Extras/Static Library/VWContentCategory.h"; sourceTree = "<group>"; };
+		ECB7D47B1D2142E500C2A0AE /* VWFullscreenAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWFullscreenAdViewController.h; path = "../../Extras/Static Library/VWFullscreenAdViewController.h"; sourceTree = "<group>"; };
+		ECB7D47C1D2142E500C2A0AE /* VWInterstitial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWInterstitial.h; path = "../../Extras/Static Library/VWInterstitial.h"; sourceTree = "<group>"; };
+		ECB7D47D1D2142E500C2A0AE /* VWInterstitialAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWInterstitialAd.h; path = "../../Extras/Static Library/VWInterstitialAd.h"; sourceTree = "<group>"; };
+		ECB7D47E1D2142E500C2A0AE /* VWInterstitialAdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWInterstitialAdManager.h; path = "../../Extras/Static Library/VWInterstitialAdManager.h"; sourceTree = "<group>"; };
+		ECB7D47F1D2142E500C2A0AE /* VWInterstitialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWInterstitialManager.h; path = "../../Extras/Static Library/VWInterstitialManager.h"; sourceTree = "<group>"; };
+		ECB7D4801D2142E500C2A0AE /* VWSplashAdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWSplashAdManager.h; path = "../../Extras/Static Library/VWSplashAdManager.h"; sourceTree = "<group>"; };
+		ECB7D4811D2142E500C2A0AE /* VWSplashAdvertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWSplashAdvertView.h; path = "../../Extras/Static Library/VWSplashAdvertView.h"; sourceTree = "<group>"; };
+		ECB7D4821D2142E500C2A0AE /* VWSplashAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWSplashAdView.h; path = "../../Extras/Static Library/VWSplashAdView.h"; sourceTree = "<group>"; };
+		ECB7D4831D2142F500C2A0AE /* libVerveAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVerveAd.a; path = "../../Extras/Static Library/libVerveAd.a"; sourceTree = "<group>"; };
+		ECB7D4891D21440900C2A0AE /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = "<absolute>"; };
+		ECB7D48A1D21440900C2A0AE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = "<absolute>"; };
+		ECB7D48B1D21440900C2A0AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		ECB7D48C1D21440900C2A0AE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Social.framework; sourceTree = "<absolute>"; };
+		ECB7D48D1D21440900C2A0AE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		ECB7D48E1D21440900C2A0AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		ECB7D48F1D21440900C2A0AE /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/PassKit.framework; sourceTree = "<absolute>"; };
+		ECB7D4901D21440900C2A0AE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = "<absolute>"; };
+		ECB7D4911D21440900C2A0AE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = "<absolute>"; };
+		ECB7D4921D21440900C2A0AE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = "<absolute>"; };
+		ECB7D4931D21440900C2A0AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		ECB7D4941D21440900C2A0AE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		ECB7D4951D21440900C2A0AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		ECB7D4961D21440900C2A0AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<absolute>"; };
+		ECB7D4981D21440900C2A0AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		ECB7D4991D21440900C2A0AE /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = "<absolute>"; };
+		ECB7D49A1D21440900C2A0AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		ECB7D4AD1D21441E00C2A0AE /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libz.tbd; sourceTree = "<absolute>"; };
+		ECB7D4AE1D21441E00C2A0AE /* libxml2.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libxml2.tbd; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECB7D4541D21394600C2A0AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704C532F1D6647450010499C /* MobileCoreServices.framework in Frameworks */,
+				70571CA81D66467600482BE9 /* CoreTelephony.framework in Frameworks */,
+				ECB7D4A61D21440900C2A0AE /* CoreFoundation.framework in Frameworks */,
+				ECB7D49B1D21440900C2A0AE /* CoreBluetooth.framework in Frameworks */,
+				ECB7D4AA1D21440A00C2A0AE /* Foundation.framework in Frameworks */,
+				ECB7D4A31D21440900C2A0AE /* AdSupport.framework in Frameworks */,
+				ECB7D4A21D21440900C2A0AE /* EventKit.framework in Frameworks */,
+				ECB7D4B01D21441E00C2A0AE /* libxml2.tbd in Frameworks */,
+				ECB7D4AB1D21440A00C2A0AE /* WatchConnectivity.framework in Frameworks */,
+				ECB7D4A81D21440900C2A0AE /* UIKit.framework in Frameworks */,
+				ECB7D49F1D21440900C2A0AE /* CoreData.framework in Frameworks */,
+				ECB7D4AF1D21441E00C2A0AE /* libz.tbd in Frameworks */,
+				ECB7D49E1D21440900C2A0AE /* Social.framework in Frameworks */,
+				ECB7D49C1D21440900C2A0AE /* MediaPlayer.framework in Frameworks */,
+				ECB7D4A11D21440900C2A0AE /* PassKit.framework in Frameworks */,
+				ECB7D4A01D21440900C2A0AE /* CoreLocation.framework in Frameworks */,
+				ECB7D4A51D21440900C2A0AE /* QuartzCore.framework in Frameworks */,
+				ECB7D4AC1D21440A00C2A0AE /* SystemConfiguration.framework in Frameworks */,
+				ECB7D4A71D21440900C2A0AE /* CoreGraphics.framework in Frameworks */,
+				ECB7D49D1D21440900C2A0AE /* Security.framework in Frameworks */,
+				ECB7D4A41D21440900C2A0AE /* MessageUI.framework in Frameworks */,
+				ECB7D4871D21430D00C2A0AE /* libVerveAd.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECB7D44E1D21394600C2A0AE = {
+			isa = PBXGroup;
+			children = (
+				704C532E1D6647450010499C /* MobileCoreServices.framework */,
+				70571CA71D66467600482BE9 /* CoreTelephony.framework */,
+				ECB7D4881D2143FB00C2A0AE /* Dependencies */,
+				ECB7D4591D21394600C2A0AE /* VWAdStaticLibraryExample */,
+				ECB7D4581D21394600C2A0AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECB7D4581D21394600C2A0AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECB7D4571D21394600C2A0AE /* VWAdStaticLibraryExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECB7D4591D21394600C2A0AE /* VWAdStaticLibraryExample */ = {
+			isa = PBXGroup;
+			children = (
+				ECB7D45D1D21394600C2A0AE /* AppDelegate.h */,
+				ECB7D45E1D21394600C2A0AE /* AppDelegate.m */,
+				ECB7D4601D21394600C2A0AE /* ViewController.h */,
+				ECB7D4611D21394600C2A0AE /* ViewController.m */,
+				ECB7D4631D21394600C2A0AE /* Main.storyboard */,
+				ECB7D4661D21394600C2A0AE /* Assets.xcassets */,
+				ECB7D4681D21394600C2A0AE /* LaunchScreen.storyboard */,
+				ECB7D46B1D21394600C2A0AE /* Info.plist */,
+				ECB7D45A1D21394600C2A0AE /* Supporting Files */,
+			);
+			path = VWAdStaticLibraryExample;
+			sourceTree = "<group>";
+		};
+		ECB7D45A1D21394600C2A0AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECB7D45B1D21394600C2A0AE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECB7D4731D2142C400C2A0AE /* VerveAdLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				ECB7D4831D2142F500C2A0AE /* libVerveAd.a */,
+				ECB7D4741D2142E500C2A0AE /* VWAdContainerView.h */,
+				ECB7D4751D2142E500C2A0AE /* VWAdLibrary.h */,
+				ECB7D4761D2142E500C2A0AE /* VWAdminFunctionsManager.h */,
+				ECB7D4771D2142E500C2A0AE /* VWAdRequest.h */,
+				ECB7D4781D2142E500C2A0AE /* VWAdSize.h */,
+				ECB7D4791D2142E500C2A0AE /* VWAdvertView.h */,
+				ECB7D47A1D2142E500C2A0AE /* VWContentCategory.h */,
+				ECB7D47B1D2142E500C2A0AE /* VWFullscreenAdViewController.h */,
+				ECB7D47C1D2142E500C2A0AE /* VWInterstitial.h */,
+				ECB7D47D1D2142E500C2A0AE /* VWInterstitialAd.h */,
+				ECB7D47E1D2142E500C2A0AE /* VWInterstitialAdManager.h */,
+				ECB7D47F1D2142E500C2A0AE /* VWInterstitialManager.h */,
+				ECB7D4801D2142E500C2A0AE /* VWSplashAdManager.h */,
+				ECB7D4811D2142E500C2A0AE /* VWSplashAdvertView.h */,
+				ECB7D4821D2142E500C2A0AE /* VWSplashAdView.h */,
+			);
+			name = VerveAdLibrary;
+			sourceTree = "<group>";
+		};
+		ECB7D4881D2143FB00C2A0AE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				ECB7D4AD1D21441E00C2A0AE /* libz.tbd */,
+				ECB7D4AE1D21441E00C2A0AE /* libxml2.tbd */,
+				ECB7D4891D21440900C2A0AE /* CoreBluetooth.framework */,
+				ECB7D48A1D21440900C2A0AE /* MediaPlayer.framework */,
+				ECB7D48B1D21440900C2A0AE /* Security.framework */,
+				ECB7D48C1D21440900C2A0AE /* Social.framework */,
+				ECB7D48D1D21440900C2A0AE /* CoreData.framework */,
+				ECB7D48E1D21440900C2A0AE /* CoreLocation.framework */,
+				ECB7D48F1D21440900C2A0AE /* PassKit.framework */,
+				ECB7D4901D21440900C2A0AE /* EventKit.framework */,
+				ECB7D4911D21440900C2A0AE /* AdSupport.framework */,
+				ECB7D4921D21440900C2A0AE /* MessageUI.framework */,
+				ECB7D4931D21440900C2A0AE /* QuartzCore.framework */,
+				ECB7D4941D21440900C2A0AE /* CoreFoundation.framework */,
+				ECB7D4951D21440900C2A0AE /* CoreGraphics.framework */,
+				ECB7D4961D21440900C2A0AE /* UIKit.framework */,
+				ECB7D4981D21440900C2A0AE /* Foundation.framework */,
+				ECB7D4991D21440900C2A0AE /* WatchConnectivity.framework */,
+				ECB7D49A1D21440900C2A0AE /* SystemConfiguration.framework */,
+				ECB7D4731D2142C400C2A0AE /* VerveAdLibrary */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECB7D4561D21394600C2A0AE /* VWAdStaticLibraryExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECB7D46E1D21394600C2A0AE /* Build configuration list for PBXNativeTarget "VWAdStaticLibraryExample" */;
+			buildPhases = (
+				ECB7D4531D21394600C2A0AE /* Sources */,
+				ECB7D4541D21394600C2A0AE /* Frameworks */,
+				ECB7D4551D21394600C2A0AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VWAdStaticLibraryExample;
+			productName = VWAdStaticLibraryExample;
+			productReference = ECB7D4571D21394600C2A0AE /* VWAdStaticLibraryExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECB7D44F1D21394600C2A0AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Verve Mobile";
+				TargetAttributes = {
+					ECB7D4561D21394600C2A0AE = {
+						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = ECB7D4521D21394600C2A0AE /* Build configuration list for PBXProject "VWAdStaticLibraryExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECB7D44E1D21394600C2A0AE;
+			productRefGroup = ECB7D4581D21394600C2A0AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECB7D4561D21394600C2A0AE /* VWAdStaticLibraryExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECB7D4551D21394600C2A0AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECB7D46A1D21394600C2A0AE /* LaunchScreen.storyboard in Resources */,
+				ECB7D4671D21394600C2A0AE /* Assets.xcassets in Resources */,
+				ECB7D4651D21394600C2A0AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECB7D4531D21394600C2A0AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECB7D4621D21394600C2A0AE /* ViewController.m in Sources */,
+				ECB7D45F1D21394600C2A0AE /* AppDelegate.m in Sources */,
+				ECB7D45C1D21394600C2A0AE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECB7D4631D21394600C2A0AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECB7D4641D21394600C2A0AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECB7D4681D21394600C2A0AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECB7D4691D21394600C2A0AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECB7D46C1D21394600C2A0AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECB7D46D1D21394600C2A0AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECB7D46F1D21394600C2A0AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = VWAdStaticLibraryExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../Extras/Static\\ Library";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vervewireless.VWAdStaticLibraryExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ECB7D4701D21394600C2A0AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = VWAdStaticLibraryExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../Extras/Static\\ Library";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vervewireless.VWAdStaticLibraryExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECB7D4521D21394600C2A0AE /* Build configuration list for PBXProject "VWAdStaticLibraryExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB7D46C1D21394600C2A0AE /* Debug */,
+				ECB7D46D1D21394600C2A0AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECB7D46E1D21394600C2A0AE /* Build configuration list for PBXNativeTarget "VWAdStaticLibraryExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB7D46F1D21394600C2A0AE /* Debug */,
+				ECB7D4701D21394600C2A0AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECB7D44F1D21394600C2A0AE /* Project object */;
+}

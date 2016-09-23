@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, VWSplashAdViewDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    VWAdLibrary.shared().startGimbalProximityWithAPIKey("3fd6c5a5-2df3-4bac-95a5-b5af06f5acfc", enableCommunicate: true);
     
     splashAd = VWSplashAdView()
     splashAd?.delegate = self
     
-    splashAd!.loadRequest(VWAdRequest(contentCategoryID: VWContentCategory.NewsAndInformation))
+    splashAd?.loadRequest(VWAdRequest(contentCategoryID: .NewsAndInformation))
     
     return true
   }

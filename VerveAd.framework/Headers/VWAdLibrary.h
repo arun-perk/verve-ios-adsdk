@@ -60,6 +60,12 @@ extern NSString * _Nonnull const kVWGADExtraPostalCodeKey;         // NSString
 @class VWAdRequest;
 @class CLLocation;
 
+typedef enum : NSUInteger {
+  VWAdLogPrintLevelInfo,  // default
+  VWAdLogPrintLevelWarning,
+  VWAdLogPrintLevelError
+} VWAdLogPrintLevel;
+
 @protocol VWAdLibraryDelegate <NSObject>
 
 @optional
@@ -113,19 +119,14 @@ extern NSString * _Nonnull const kVWGADExtraPostalCodeKey;         // NSString
 + (nonnull VWAdLibrary *)shared;
 
 /*!
+ * Set desired log print level. Default is .Info.
+ */
+- (void)setLogPrintLevel:(VWAdLogPrintLevel)level;
+
+/*!
  * Delegate.
  */
 @property (nonatomic, weak, nullable) id<VWAdLibraryDelegate> delegate;
-
-/*!
- * Starts Gimbal Proximity beacon monitoring.
- */
-- (void)startGimbalProximityWithAPIKey:(nonnull NSString *)apiKey enableCommunicate:(BOOL)enableCommunicate;
-
-/*!
- * Ends Gimbal Proximity beacon monitoring if it is running.
- */
-- (void)endGimbalProximity;
 
 /*!
  * Partner keyword you specified in Info.plist file (kVWOnlineAdsKeyword). If you did not specify
@@ -140,27 +141,20 @@ extern NSString * _Nonnull const kVWGADExtraPostalCodeKey;         // NSString
 @property (nonatomic, readonly) BOOL geofenceMonitoringRunning;
 
 /*!
- * Boolean value indicating Gimbal Proximity state.
- */
-@property (nonatomic, readonly) BOOL gimbalProximityRunning;
-
-/*!
- * Set this property to limit number of region monitoring slots available to the library.
- * Negative value indicates that it should register as many regions as allowed by iOS.
- * Default value is -1.
+ * Set this property to reserve number of region monitoring slots available for the app.
+ * Default value is 0.
  *
  * @warning You should not modify this value unless your app also monitores regions - a shared system resource.
  */
-@property (nonatomic, assign) NSInteger geofenceRegionMonitoringSlotsLimit;
+@property (nonatomic, assign) NSInteger geofenceReservedSlots;
 
 /*!
- * Set this property to limit number of beacon monitoring slots available to the library.
- * Negative value indicates that it should register as many regions as allowed by iOS.
- * Default value is -1.
+ * Set this property to reserve number of beacon monitoring slots available for the app.
+ * Default value is 0.
  *
  * @warning You should not modify this value unless your app also monitores beacons - a shared system resource.
  */
-@property (nonatomic, assign) NSInteger beaconRegionMonitoringSlotsLimit;
+@property (nonatomic, assign) NSInteger beaconReservedSlots;
 
 /*!
  * Latest acquired location. Updated on init and applicationDidBecomeActive with 1km desired accuracy.

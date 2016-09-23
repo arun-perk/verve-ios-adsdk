@@ -6,20 +6,10 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
-#import <iAd/iAd.h>
 #import "VWContentCategory.h"
 #import "VWAdSize.h"
 #import "VWAdRequest.h"
-
-/*
- * Name of boolean value in Info.plist indicating whether the Apple
- * iAd service should be used when a Verve request doesn't return
- * an ad.  Note that use of this service requires activation with Apple.
- * Also note that debug and ad hoc builds of apps will show test iAd
- * advertisements.
- */
-#define kVWiAdEnabled @"kVWiAdEnabled"
-
+#import "VWAdContainerView.h"
 
 extern NSString * _Nonnull const VWFullScreenAdImpressionNotification;
 extern NSString * _Nonnull const VWAdvertErrorDomain;
@@ -74,8 +64,8 @@ typedef enum {
  * This is the best place to add (and preferably animate in) advert view to your
  * view hierarchy. Use sizeThatFits: to calculate preferable size for advert view's frame.
  *
- * @warning If you're changing adSize property on advert view after it has been created or
- * if you have kVWiAdEnabled enabled, you should set (and preferably animate) advert view's
+ * @warning If you're changing adSize property on advert view after it has been created
+ * you should set (and preferably animate) advert view's
  * frame size in implementation of this method as it is possible that new ad is of different
  * size. Use sizeThatFits: to get new size.
  *
@@ -103,14 +93,6 @@ typedef enum {
 - (BOOL)advertView:(nonnull VWAdvertView *)adView shouldPresentAdResponseViewController:(nonnull UIViewController *)viewController;
 - (BOOL)advertView:(nonnull VWAdvertView *)adView shouldDismissAdResponseViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated;
 
-/*
- * If your app is interested, the iAd bannerViewActionShouldBegin:willLeaveApplication:
- * delegate gets passed through to this method.  Note that it only gets invoked on an iAd,
- * not a Verve ad.  If unimplemented, the default return is YES.
- */
-- (BOOL)advertViewiAdActionShouldBegin:(nonnull VWAdvertView *)adView willLeaveApplication:(BOOL)willLeave;
-
-
 - (void)advertViewWillPresentAdResponseViewController:(nonnull VWAdvertView *)adView;
 - (void)advertViewWillDismissAdResponseViewController:(nonnull VWAdvertView *)adView;
 - (void)advertViewDidDismissAdResponseViewController:(nonnull VWAdvertView *)adView;
@@ -119,7 +101,7 @@ typedef enum {
 @end
 
 
-@interface VWAdvertView : UIView
+@interface VWAdvertView : VWAdContainerView
 
 /*!
  * Size of an ad in the advert view. Changing this will not affect current ad, rather it will be
@@ -141,15 +123,6 @@ typedef enum {
  * Use delegate object to observe advert's state and to show or hide view accordingly.
  */
 @property (nonatomic, weak, nullable) id <VWAdvertViewDelegate, NSObject> delegate;
-
-/*! 
- * This value will default to whatever kVWiAdEnabled is set to in your Info.plist, so
- * there's usually no need to touch this if you have the default configured correctly.
- * However, if you want to conditionalize when iAd should be used, you may twiddle
- * this value after VWAdvertView has been initialized.  (Only applicable for non-custom
- * ad sizes.)  kVWiAdEnabled should be set to YES if this value will ever be YES.
- */
-@property (nonatomic, assign, getter=shouldUseiAds) BOOL useiAds;
 
 /*!
  * Indicates whether view has an ad loaded or not.
@@ -202,17 +175,41 @@ typedef enum {
  */
 - (CGSize)sizeThatFits:(CGSize)size;
 
+
 /*!
- * (Optional) If the screen that is displaying the ad has a scrollable content, use this method
- * to pass information about scrollable size and offset to the ad. Ad might use that to provide more
- * interactive experience to the user.
+ * (Optional) If the screen that is displaying the ad has a scrollable content (a scroll view, table 
+ * or collection view), call this method to pass the scroll data to the advert view on each scroll event. 
+ * Ad might use scroll data to provide more interactive experience to the user.
+ *
+ * Note: UITableView and UICollectionView are subclasses of UIScrollView so you can pass them here too.
  *
  *  - (void)scrollViewDidScroll:(UIScrollView *)scrollView
  *  {
- *    [self.adView setScrollableSize:scrollView.contentSize offset:scrollView.contentOffset];
+ *    [self.adView setScrollableDataWithScrollView:scrollView];
  *  }
  */
-- (void)setScrollableSize:(CGSize)size offset:(CGPoint)offset;
+- (void)setScrollableDataWithScrollView:(nonnull UIScrollView *)scrollView;
+
+/*!
+ * (Optional) If the screen that is displaying the ad has a scrollable content, use this method
+ * to pass information about scrollable frame, size and offset to the ad. Ad might use that data to provide more
+ * interactive experience to the user.
+ *
+ * Note: If your scroll view is a UIScrollView or UIScrollView subclass like UITableView or UICollectionView,
+ * you can use method `setScrollableDataWithScrollView:` instead of this one.
+ */
+- (void)setScrollableFrame:(CGRect)frame size:(CGSize)size offset:(CGPoint)offset;
+
+/*!
+ * (Optional) If the screen that is displaying the ad has a scrollable content and the advert view is
+ * part of that scrollable content, use this method to pass information about scrollable frame, size, offset and
+ * frame of the ad in the scrollable area to the ad. Ad might use that data to provide more interactive
+ * experience to the user.
+ *
+ * Note: If your scroll view is a UIScrollView or UIScrollView subclass like UITableView or UICollectionView,
+ * you can use method `setScrollableDataWithScrollView:` instead of this one.
+ */
+- (void)setScrollableFrame:(CGRect)frame size:(CGSize)size offset:(CGPoint)offset adViewFrame:(CGRect)adViewFrame;
 
 @end
 

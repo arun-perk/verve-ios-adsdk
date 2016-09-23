@@ -17,6 +17,7 @@ FOUNDATION_EXPORT const unsigned char VerveAdVersionString[];
 #import <VerveAd/VWAdLibrary.h>
 #import <VerveAd/VWAdRequest.h>
 #import <VerveAd/VWAdSize.h>
+#import <VerveAd/VWAdContainerView.h>
 #import <VerveAd/VWAdvertView.h>
 #import <VerveAd/VWContentCategory.h>
 #import <VerveAd/VWInterstitialAd.h>
