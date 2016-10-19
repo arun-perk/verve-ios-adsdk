@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691F41171DABABF4006DBA9F /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691F41161DABABF4006DBA9F /* PassKit.framework */; };
 		70006F071D247FB300D98C2D /* MPBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70006D801D247FB300D98C2D /* MPBannerAdManager.m */; };
 		70006F081D247FB300D98C2D /* MPBannerCustomEventAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70006D831D247FB300D98C2D /* MPBannerCustomEventAdapter.m */; };
 		70006F091D247FB300D98C2D /* MPBaseBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70006D851D247FB300D98C2D /* MPBaseBannerAdapter.m */; };
@@ -216,6 +217,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		691F41151DABABF4006DBA9F /* VWAdSwiftExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VWAdSwiftExample.entitlements; sourceTree = "<group>"; };
+		691F41161DABABF4006DBA9F /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		70006D7F1D247FB300D98C2D /* MPBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBannerAdManager.h; sourceTree = "<group>"; };
 		70006D801D247FB300D98C2D /* MPBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBannerAdManager.m; sourceTree = "<group>"; };
 		70006D811D247FB300D98C2D /* MPBannerAdManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBannerAdManagerDelegate.h; sourceTree = "<group>"; };
@@ -602,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC26232A1C90369200711F5E /* libVWGADAdapter.a in Frameworks */,
+				691F41171DABABF4006DBA9F /* PassKit.framework in Frameworks */,
 				EC26232B1C90369200711F5E /* libVWMoPubAdapter.a in Frameworks */,
 				EC26232E1C9037A400711F5E /* VerveAd.framework in Frameworks */,
 				70B1AB461C4ED0AB008A3E4A /* GoogleMobileAds.framework in Frameworks */,
@@ -1165,6 +1169,7 @@
 		EC3D707219D41ED3004A65DC /* VWAdSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				691F41151DABABF4006DBA9F /* VWAdSwiftExample.entitlements */,
 				EC3D707519D41ED3004A65DC /* AppDelegate.swift */,
 				EC3D707719D41ED3004A65DC /* VWVerveServerViewController.swift */,
 				7009C4131BC2FAC1003F52C6 /* VWDFPServerViewController.swift */,
@@ -1189,6 +1194,7 @@
 		EC3D70BD19D427CD004A65DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				691F41161DABABF4006DBA9F /* PassKit.framework */,
 				70006D661D247FB300D98C2D /* MoPubSDK */,
 				EC2623281C90369200711F5E /* libVWGADAdapter.a */,
 				EC2623291C90369200711F5E /* libVWMoPubAdapter.a */,
@@ -1233,6 +1239,15 @@
 				TargetAttributes = {
 					EC3D706F19D41ED3004A65DC = {
 						CreatedOnToolsVersion = 6.0.1;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1581,6 +1596,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VWAdSwiftExample/VWAdSwiftExample.entitlements;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1617,6 +1634,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VWAdSwiftExample/VWAdSwiftExample.entitlements;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
