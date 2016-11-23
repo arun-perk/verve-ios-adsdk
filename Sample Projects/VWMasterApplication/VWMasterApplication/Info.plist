@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2016110210.1</string>
+	<string>2016112311.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -39,9 +39,9 @@
 	<string>This advertisement would like permission to store a photo on your device.</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
-		<string>fetch</string>
 		<string>bluetooth-central</string>
+		<string>fetch</string>
+		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
