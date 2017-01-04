@@ -45,6 +45,8 @@ typedef enum {
 } VWAdvertType;
 
 
+/* Ad resize request completion handler  */
+typedef void (^VWRequestBoundsCompletionHandler)(BOOL completed, CGRect availableBounds);
 
 @class VWAdvertView;
 
@@ -98,6 +100,8 @@ typedef enum {
 - (void)advertViewDidDismissAdResponseViewController:(nonnull VWAdvertView *)adView;
 - (void)advertViewWillLeaveApplication:(nonnull VWAdvertView *)adView;
 
+- (void)advertView:(nonnull VWAdvertView *)adView requestsNewBounds:(CGRect)bounds withAnimation:(BOOL)animation withCompletionHandler:(nonnull VWRequestBoundsCompletionHandler)completionHandler;
+
 @end
 
 
@@ -137,6 +141,17 @@ typedef enum {
  * UIResponer chain from the ad view upwards.
  */
 @property (nonatomic, weak, nullable) UIViewController *rootViewController;
+
+/*!
+ * Set this property to provide a native view that ad will use as a styling and layout template for unexpanded state of a "native ad"
+ */
+@property (nonatomic, weak, nullable) UIView *unexpandedLayout;
+
+/*!
+ * Set this property to provide a native view that ad will use as a styling and layout template for expanded state of a "native ad"
+ */
+@property (nonatomic, weak, nullable) UIView *expandedLayout;
+
 
 /*! 
  * Creates new advert view for given size with origin in (0,0).

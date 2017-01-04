@@ -9,6 +9,9 @@
 import UIKit
 
 class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterstitialAdControllerDelegate {
+  
+  @IBOutlet weak var autoRefreshSwitch: UISwitch!
+    
   let kBannerAdUnit = "81e4362779af4f31b392223cece421a3"
   let kInlineAdUnit = "12a8caf3a56e40a5a883b36f910f8d96"
   let kInterstitialAdUnit = "400efb79cbfd4063a777d471ac25c795"
@@ -26,6 +29,8 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
     
     addBannerAdView()
     addInlineAdView()
+    
+    enableOrDisableAutoRefreshing(autoRefreshSwitch)
   }
   
   
@@ -175,6 +180,22 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
   func interstitialDidReceiveTapEvent(interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidReceiveTapEvent: \(adUnit)")
+    }
+  }
+    
+  @IBAction func autoRefreshSwitchValueChanged(currentAutoRefreshSwitch: UISwitch) {
+    enableOrDisableAutoRefreshing(currentAutoRefreshSwitch)
+  }
+  
+  func enableOrDisableAutoRefreshing(currentAutoRefreshSwitch: UISwitch) {
+    guard let bannerAdView = bannerAdView else { return }
+    guard let inlineAdView = inlineAdView else { return }
+    if (currentAutoRefreshSwitch.on) {
+        bannerAdView.startAutomaticallyRefreshingContents()
+        inlineAdView.startAutomaticallyRefreshingContents()
+    } else {
+        bannerAdView.stopAutomaticallyRefreshingContents()
+        inlineAdView.stopAutomaticallyRefreshingContents()
     }
   }
 }

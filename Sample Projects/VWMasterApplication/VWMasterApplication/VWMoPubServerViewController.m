@@ -22,6 +22,8 @@ static NSString *const kLeaderboardAdUnit = @"83023bd000f44a12a02de151b1664e30";
 @property (strong, nonatomic) MPAdView *inlineAdView;
 @property (strong, nonatomic) MPInterstitialAdController *interstitialAdView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *autoRefreshSwitch;
+
 @end
 
 @implementation VWMoPubServerViewController
@@ -36,6 +38,8 @@ static NSString *const kLeaderboardAdUnit = @"83023bd000f44a12a02de151b1664e30";
     
     [self addBannerAdView];
     [self addInlineAdView];
+    
+    [self enableOrDisableAutoRefreshing:self.autoRefreshSwitch];
 }
 
 
@@ -167,6 +171,20 @@ static NSString *const kLeaderboardAdUnit = @"83023bd000f44a12a02de151b1664e30";
 
 - (void)interstitialDidReceiveTapEvent:(MPInterstitialAdController *)interstitial {
     NSLog(@"interstitialDidReceiveTapEvent:");
+}
+
+- (IBAction)autoRefreshSwitchValueChanged:(UISwitch *)currentAutoRefreshSwitch {
+    [self enableOrDisableAutoRefreshing:currentAutoRefreshSwitch];
+}
+
+- (void)enableOrDisableAutoRefreshing:(UISwitch *)currentAutoRefreshSwitch {
+    if ([currentAutoRefreshSwitch isOn]) {
+        [self.bannerAdView startAutomaticallyRefreshingContents];
+        [self.inlineAdView startAutomaticallyRefreshingContents];
+    } else {
+        [self.bannerAdView stopAutomaticallyRefreshingContents];
+        [self.inlineAdView stopAutomaticallyRefreshingContents];
+    }
 }
 
 @end

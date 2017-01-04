@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A433AC1DB638960061A809 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A433AB1DB638960061A809 /* EventKitUI.framework */; };
 		704C532F1D6647450010499C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C532E1D6647450010499C /* MobileCoreServices.framework */; };
 		70571CA81D66467600482BE9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70571CA71D66467600482BE9 /* CoreTelephony.framework */; };
+		844E134B1DF5AF69001464FB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844E134A1DF5AF69001464FB /* WebKit.framework */; };
 		ECB7D45C1D21394600C2A0AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D45B1D21394600C2A0AE /* main.m */; };
 		ECB7D45F1D21394600C2A0AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D45E1D21394600C2A0AE /* AppDelegate.m */; };
 		ECB7D4621D21394600C2A0AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB7D4611D21394600C2A0AE /* ViewController.m */; };
@@ -38,9 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		691F41181DABAC05006DBA9F /* VWAdStaticLibraryExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VWAdStaticLibraryExample.entitlements; sourceTree = "<group>"; };
+		69A433AB1DB638960061A809 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		69B278A31D882005007220F1 /* VWAdStaticLibraryExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VWAdStaticLibraryExample.entitlements; sourceTree = "<group>"; };
 		704C532E1D6647450010499C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		70571CA71D66467600482BE9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		844E134A1DF5AF69001464FB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		ECB7D4571D21394600C2A0AE /* VWAdStaticLibraryExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VWAdStaticLibraryExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB7D45B1D21394600C2A0AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECB7D45D1D21394600C2A0AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844E134B1DF5AF69001464FB /* WebKit.framework in Frameworks */,
+				69A433AC1DB638960061A809 /* EventKitUI.framework in Frameworks */,
 				704C532F1D6647450010499C /* MobileCoreServices.framework in Frameworks */,
 				70571CA81D66467600482BE9 /* CoreTelephony.framework in Frameworks */,
 				ECB7D4A61D21440900C2A0AE /* CoreFoundation.framework in Frameworks */,
@@ -121,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69A433AA1DB638960061A809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				844E134A1DF5AF69001464FB /* WebKit.framework */,
+				69A433AB1DB638960061A809 /* EventKitUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ECB7D44E1D21394600C2A0AE = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +144,7 @@
 				ECB7D4881D2143FB00C2A0AE /* Dependencies */,
 				ECB7D4591D21394600C2A0AE /* VWAdStaticLibraryExample */,
 				ECB7D4581D21394600C2A0AE /* Products */,
+				69A433AA1DB638960061A809 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,7 +159,7 @@
 		ECB7D4591D21394600C2A0AE /* VWAdStaticLibraryExample */ = {
 			isa = PBXGroup;
 			children = (
-				691F41181DABAC05006DBA9F /* VWAdStaticLibraryExample.entitlements */,
+				69B278A31D882005007220F1 /* VWAdStaticLibraryExample.entitlements */,
 				ECB7D45D1D21394600C2A0AE /* AppDelegate.h */,
 				ECB7D45E1D21394600C2A0AE /* AppDelegate.m */,
 				ECB7D4601D21394600C2A0AE /* ViewController.h */,
