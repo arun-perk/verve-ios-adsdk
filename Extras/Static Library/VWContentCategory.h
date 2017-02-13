@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, VWContentCategory) {
   VWContentCategoryIndex = 137,
   VWContentCategoryHomePage = 888,
   
-  /* Arts and Entertianment */
+  /* Arts and Entertainment */
   VWContentCategoryArtsAndEntertainment = 24,
   VWContentCategoryArtsAndEntertainmentBooksAndLiterature = 1000,
   VWContentCategoryArtsAndEntertainmentCelebrityFanGossip = 1001,
