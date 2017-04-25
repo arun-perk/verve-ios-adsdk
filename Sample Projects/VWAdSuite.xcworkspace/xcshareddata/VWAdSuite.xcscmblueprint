@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D271FAC02F63B728C0D4BD2B3FD9E184E43A25E2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D271FAC02F63B728C0D4BD2B3FD9E184E43A25E2" : 9223372036854775807,
+    "3C2B79932F54B4D81E100ECBCC3E559DEBE0D0D9" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A9EA23E-808A-41AF-8ED0-14A8EFA559FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D271FAC02F63B728C0D4BD2B3FD9E184E43A25E2" : "Ad\/",
+    "3C2B79932F54B4D81E100ECBCC3E559DEBE0D0D9" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VWAdSuite",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sample Projects\/VWAdSuite.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:VerveWireless\/iosv2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C2B79932F54B4D81E100ECBCC3E559DEBE0D0D9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:VerveWireless\/iOS_Ad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D271FAC02F63B728C0D4BD2B3FD9E184E43A25E2"
+    }
+  ]
+}

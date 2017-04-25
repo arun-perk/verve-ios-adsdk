@@ -37,23 +37,29 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
   //MARK: Banner Ad
   
   func addBannerAdView() {
-    let adSize = UI_USER_INTERFACE_IDIOM() == .Pad ? MOPUB_LEADERBOARD_SIZE : MOPUB_BANNER_SIZE
-    let adUnit = UI_USER_INTERFACE_IDIOM() == .Pad ? kLeaderboardAdUnit : kBannerAdUnit
+    let adSize = UI_USER_INTERFACE_IDIOM() == .pad ? MOPUB_LEADERBOARD_SIZE : MOPUB_BANNER_SIZE
+    let adUnit = UI_USER_INTERFACE_IDIOM() == .pad ? kLeaderboardAdUnit : kBannerAdUnit
     
-    bannerAdView = MPAdView(adUnitId: adUnit, size: adSize)
-    bannerAdView?.delegate = self
-    bannerAdView?.backgroundColor = .grayColor()
+    guard let tabBarHeight = tabBarController?.tabBar.frame.size.height else {
+      return
+    }
+    
+    guard let bannerAdView = MPAdView(adUnitId: adUnit, size: adSize) else { return }
+    bannerAdView.delegate = self
+    bannerAdView.backgroundColor = .gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = bannerAdView!.sizeThatFits(bounds.size)
+    adFrame.size = bannerAdView.sizeThatFits(bounds.size)
     adFrame.origin.x = (bounds.size.width-adFrame.size.width)/2
-    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarController!.tabBar.frame.size.height
+    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarHeight
     
-    bannerAdView?.frame = adFrame
+    bannerAdView.frame = adFrame
     
-    self.view?.addSubview(bannerAdView!)
+    view.addSubview(bannerAdView)
+    
+    self.bannerAdView = bannerAdView
   }
   
   @IBAction func requestBannerAd() {
@@ -64,19 +70,25 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
   //MARK: Inline Ad
   
   func addInlineAdView() {
-    guard inlineAdView == nil else { return }
+    guard self.inlineAdView == nil else { return }
     
-    inlineAdView = MPAdView(adUnitId: kInlineAdUnit, size: MOPUB_MEDIUM_RECT_SIZE)
-    inlineAdView?.delegate = self
-    inlineAdView?.backgroundColor = .grayColor()
+    guard let inlineAdView = MPAdView(adUnitId: kInlineAdUnit, size: MOPUB_MEDIUM_RECT_SIZE) else { return }
+    inlineAdView.delegate = self
+    inlineAdView.backgroundColor = .gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = inlineAdView!.sizeThatFits(bounds.size)
-    inlineAdView!.frame = CGRectMake((bounds.size.width - adFrame.size.width)/2, (bounds.size.height - adFrame.size.height)/2, adFrame.size.width, adFrame.size.height);
+    adFrame.size = inlineAdView.sizeThatFits(bounds.size)
+    inlineAdView.frame = CGRect(
+      x: (bounds.size.width - adFrame.size.width)/2,
+      y: (bounds.size.height - adFrame.size.height)/2,
+      width: adFrame.size.width,
+      height: adFrame.size.height);
     
-    self.view?.addSubview(inlineAdView!)
+    view.addSubview(inlineAdView)
+    
+    self.inlineAdView = inlineAdView
   }
   
   @IBAction func requestInlineAd() {
@@ -95,13 +107,13 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
   
   //MARK: MPAdViewDelegate
   
-  func adViewDidLoadAd(view: MPAdView!) {
+  func adViewDidLoadAd(_ view: MPAdView!) {
     if let adUnit = view.adUnitId {
       NSLog("adViewDidLoadAd: \(adUnit)")
     }
   }
   
-  func  adViewDidFailToLoadAd(view: MPAdView!) {
+  func adViewDidFail(toLoadAd view: MPAdView!) {
     if let adUnit = view.adUnitId {
       NSLog("adViewDidFailToLoadAd: \(adUnit)")
     }
@@ -112,19 +124,19 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
     return self
   }
   
-  func willPresentModalViewForAd(view: MPAdView!) {
+  func willPresentModalView(forAd view: MPAdView!) {
     if let adUnit = view.adUnitId {
       NSLog("willPresentModalViewForAd: \(adUnit)")
     }
   }
   
-  func didDismissModalViewForAd(view: MPAdView!) {
+  func didDismissModalView(forAd view: MPAdView!) {
     if let adUnit = view.adUnitId {
       NSLog("didDismissModalViewForAd: \(adUnit)")
     }
   }
   
-  func willLeaveApplicationFromAd(view: MPAdView!) {
+  func willLeaveApplication(fromAd view: MPAdView!) {
     if let adUnit = view.adUnitId {
       NSLog("willLeaveApplicationFromAd: \(adUnit)")
     }
@@ -133,11 +145,11 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
   
   //MARK: MPInterstitialAdControllerDelegate
   
-  func interstitialDidLoadAd(interstitial: MPInterstitialAdController!) {
+  func interstitialDidLoadAd(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidLoadAd: \(adUnit)")
       
-      interstitial.showFromViewController(self)
+      interstitial.show(from: self)
     }
   }
   
@@ -147,50 +159,50 @@ class VWMoPubServerViewController: UIViewController, MPAdViewDelegate, MPInterst
     }
   }
   
-  func interstitialWillAppear(interstitial: MPInterstitialAdController!) {
+  func interstitialWillAppear(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialWillAppear: \(adUnit)")
     }
   }
   
-  func interstitialDidAppear(interstitial: MPInterstitialAdController!) {
+  func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidAppear: \(adUnit)")
     }
   }
   
-  func interstitialWillDisappear(interstitial: MPInterstitialAdController!) {
+  func interstitialWillDisappear(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialWillDisappear: \(adUnit)")
     }
   }
   
-  func interstitialDidDisappear(interstitial: MPInterstitialAdController!) {
+  func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidDisappear: \(adUnit)")
     }
   }
   
-  func interstitialDidExpire(interstitial: MPInterstitialAdController!) {
+  func interstitialDidExpire(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidExpire: \(adUnit)")
     }
   }
   
-  func interstitialDidReceiveTapEvent(interstitial: MPInterstitialAdController!) {
+  func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
     if let adUnit = interstitial.adUnitId {
       NSLog("interstitialDidReceiveTapEvent: \(adUnit)")
     }
   }
     
-  @IBAction func autoRefreshSwitchValueChanged(currentAutoRefreshSwitch: UISwitch) {
+  @IBAction func autoRefreshSwitchValueChanged(_ currentAutoRefreshSwitch: UISwitch) {
     enableOrDisableAutoRefreshing(currentAutoRefreshSwitch)
   }
   
-  func enableOrDisableAutoRefreshing(currentAutoRefreshSwitch: UISwitch) {
+  func enableOrDisableAutoRefreshing(_ currentAutoRefreshSwitch: UISwitch) {
     guard let bannerAdView = bannerAdView else { return }
     guard let inlineAdView = inlineAdView else { return }
-    if (currentAutoRefreshSwitch.on) {
+    if currentAutoRefreshSwitch.isOn {
         bannerAdView.startAutomaticallyRefreshingContents()
         inlineAdView.startAutomaticallyRefreshingContents()
     } else {

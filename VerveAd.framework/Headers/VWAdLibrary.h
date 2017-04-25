@@ -87,6 +87,10 @@ typedef enum : NSUInteger {
 
 @end
 
+
+/**
+ The VWAdLibrary class provides centralized point of control for parameters of the ad library.
+ */
 @interface VWAdLibrary : NSObject
 
 /*!

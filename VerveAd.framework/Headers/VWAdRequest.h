@@ -8,6 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "VWContentCategory.h"
 
+/**
+ Represents request for creating an ad.
+ */
 @interface VWAdRequest : NSObject
 
 @property (nonatomic, copy, nullable) NSMutableArray *contentCategoryIDs;

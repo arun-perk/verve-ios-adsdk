@@ -7,9 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-// You should consider this struct as an opaque type.
-// Never, ever, rely on size property of this struct - instead use
-// CGSizeFromVWAdSize and other methods defined below.
+/// You should consider this struct as an opaque type.
+/// Never, ever, rely on size property of this struct - instead use
+/// CGSizeFromVWAdSize and other methods defined below.
 typedef struct {
   CGSize size;
   NSUInteger flags;
@@ -18,16 +18,16 @@ typedef struct {
 
 #pragma mark Standard Sizes
 
-// 320 x 50 or device-width x 50
+/// 320 x 50 or device-width x 50
 extern VWAdSize const kVWAdSizeBanner;
 
-// 300 x 250
+/// 300 x 250
 extern VWAdSize const kVWAdSizeMediumRectangle;
 
-// 728 x 90
+/// 728 x 90
 extern VWAdSize const kVWAdSizeLeaderboard;
 
-// Undefined
+/// Undefined
 extern VWAdSize const kVWAdSizeUndefined;
 
 

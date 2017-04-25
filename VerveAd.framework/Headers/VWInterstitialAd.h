@@ -36,6 +36,11 @@ typedef enum : NSUInteger {
 
 - (nonnull instancetype)init; // let the SDK determine best size for the current user interface idiom
 - (nonnull instancetype)initWithSize:(VWInterstitialAdSize)size;
+/**
+ Requests a new ad. You'll be informed of result through the delegate object.
+
+ @param adRequest Request for a new ad
+ */
 - (void)loadRequest:(nonnull VWAdRequest *)adRequest;
 
 /// Make sure the interstitial is ready and not used before calling this method.
@@ -53,6 +58,9 @@ typedef enum : NSUInteger {
 
 @end
 
+/**
+ Conform to this protocol to receive events from VWInterstitialAd.
+ */
 @protocol VWInterstitialAdDelegate <NSObject>
 @required
 - (void)interstitialAdReceiveAd:(nonnull VWInterstitialAd *)interstitialAd;

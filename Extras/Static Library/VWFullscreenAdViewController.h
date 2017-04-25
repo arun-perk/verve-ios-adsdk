@@ -10,11 +10,20 @@
 
 @protocol VWFullscreenAdViewControllerDelegate;
 
+/**
+ Represents view controller that can show full screen ads.
+ */
 @interface VWFullscreenAdViewController : UIViewController
 
 @property (nonatomic, weak, nullable) id<VWFullscreenAdViewControllerDelegate> delegate;
 
+/**
+ Should show dismiss control.
+ */
 @property (nonatomic, assign) BOOL dismissControlVisible;
+/**
+ Should disable scroll interaction.
+ */
 @property (nonatomic, assign) BOOL scrollingDisabled;
 
 @end

@@ -12,10 +12,10 @@
 #import <VerveAd/VerveAd.h>
 #import "ANSDKSettings.h"
 
-static NSString *const kPlacementIdBanner = @"9517930";
-static NSString *const kPlacementIdBannerTablet = @"9836644";
-static NSString *const kPlacementIdInline = @"9519151";
-static NSString *const kPlacementIdInterstitial = @"9517931";
+static NSString *const kPlacementIdBanner = @"11113606";
+static NSString *const kPlacementIdBannerTablet = @"11113608";
+static NSString *const kPlacementIdInline = @"11113607";
+static NSString *const kPlacementIdInterstitial = @"11113611";
 
 @interface VWAppNexusServerViewController () <ANBannerAdViewDelegate, ANInterstitialAdDelegate>
 

@@ -35,54 +35,66 @@ class VWDFPServerViewController: UIViewController, GADBannerViewDelegate, GADInt
   //MARK: Banner Ads
   
   func addBannerAdView() {
-    guard bannerAdView == nil else { return }
+    guard self.bannerAdView == nil else { return }
     
-    let size = UI_USER_INTERFACE_IDIOM() == .Pad ? kGADAdSizeLeaderboard : kGADAdSizeBanner
+    let size = UI_USER_INTERFACE_IDIOM() == .pad ? kGADAdSizeLeaderboard : kGADAdSizeBanner
     
-    bannerAdView = GADBannerView(adSize: size)
-    bannerAdView?.delegate = self
-    bannerAdView?.rootViewController = self
-    bannerAdView?.adUnitID = kBannerAdUnit
-    bannerAdView?.backgroundColor = .grayColor()
+    guard let tabBarHeight = tabBarController?.tabBar.frame.size.height else {
+      return
+    }
+    
+    let bannerAdView = GADBannerView(adSize: size)
+    bannerAdView.delegate = self
+    bannerAdView.rootViewController = self
+    bannerAdView.adUnitID = kBannerAdUnit
+    bannerAdView.backgroundColor = .gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = bannerAdView!.sizeThatFits(bounds.size)
+    adFrame.size = bannerAdView.sizeThatFits(bounds.size)
     adFrame.origin.x = (bounds.size.width-adFrame.size.width)/2
-    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarController!.tabBar.frame.size.height
+    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarHeight
     
-    bannerAdView?.frame = adFrame
-    self.view?.addSubview(bannerAdView!)
+    bannerAdView.frame = adFrame
+    view.addSubview(bannerAdView)
+    
+    self.bannerAdView = bannerAdView
   }
   
   @IBAction func requestBannerAd() {
-    bannerAdView?.loadRequest(newRequest())
+    bannerAdView?.load(newRequest())
   }
   
   
   //MARK: Inline Ads
   
   func addInlineAdView() {
-    guard inlineAdView == nil else { return }
+    guard self.inlineAdView == nil else { return }
     
-    inlineAdView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-    inlineAdView?.delegate = self
-    inlineAdView?.rootViewController = self
-    inlineAdView?.adUnitID = kBannerAdUnit
-    inlineAdView?.backgroundColor = UIColor.grayColor()
+    let inlineAdView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+    inlineAdView.delegate = self
+    inlineAdView.rootViewController = self
+    inlineAdView.adUnitID = kBannerAdUnit
+    inlineAdView.backgroundColor = UIColor.gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = inlineAdView!.sizeThatFits(bounds.size)
-    inlineAdView?.frame = CGRect(x: (bounds.size.width - adFrame.size.width)/2, y: (bounds.size.height - adFrame.size.height)/2, width: adFrame.size.width, height: adFrame.size.height)
+    adFrame.size = inlineAdView.sizeThatFits(bounds.size)
+    inlineAdView.frame = CGRect(
+      x: (bounds.size.width - adFrame.size.width)/2,
+      y: (bounds.size.height - adFrame.size.height)/2,
+      width: adFrame.size.width,
+      height: adFrame.size.height)
     
-    self.view?.addSubview(inlineAdView!)
+    view.addSubview(inlineAdView)
+    
+    self.inlineAdView = inlineAdView
   }
   
   @IBAction func requestInlineAd() {
-    inlineAdView?.loadRequest(newRequest())
+    inlineAdView?.load(newRequest())
   }
   
   
@@ -91,7 +103,7 @@ class VWDFPServerViewController: UIViewController, GADBannerViewDelegate, GADInt
   @IBAction func requestInterstitialAd() {
     interstitialAdView = GADInterstitial(adUnitID: kInterstitialAdUnit)
     interstitialAdView?.delegate = self
-    interstitialAdView?.loadRequest(newRequest())
+    interstitialAdView?.load(newRequest())
   }
   
   
@@ -103,14 +115,14 @@ class VWDFPServerViewController: UIViewController, GADBannerViewDelegate, GADInt
     // Let us set example contentCategoryID
     // These parameters are optional. Consult Verve Ad Library documentation for more info.
     let extras = [
-      kVWGADExtraContentCategoryIDKey :  VWContentCategory.NewsAndInformation.rawValue,
+      kVWGADExtraContentCategoryIDKey :  VWContentCategory.newsAndInformation.rawValue,
     ]
     
     let customEventExtras = GADCustomEventExtras()
     customEventExtras.setExtras(extras, forLabel: kCustomEventLabel)
     
     let request =  GADRequest()
-    request.registerAdNetworkExtras(customEventExtras)
+    request.register(customEventExtras)
     
     return request
   }
@@ -118,38 +130,38 @@ class VWDFPServerViewController: UIViewController, GADBannerViewDelegate, GADInt
   
   //MARK: GADBannerViewDelegate
   
-  func adViewDidReceiveAd(view: GADBannerView!) {
-    if let adNetworkClassName = view?.adNetworkClassName {
+  func adViewDidReceiveAd(_ view: GADBannerView) {
+    if let adNetworkClassName = view.adNetworkClassName {
       NSLog("adViewDidReceiveAd: \(adNetworkClassName)")
     }
   }
   
-  func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-    if let adNetworkClassName = view?.adNetworkClassName {
+  func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    if let adNetworkClassName = view.adNetworkClassName {
       NSLog("adViewDidFailToReceiveAd: \(adNetworkClassName)")
     }
   }
   
-  func adViewWillLeaveApplication(adView: GADBannerView!) {
-    if let adNetworkClassName = adView?.adNetworkClassName {
+  func adViewWillLeaveApplication(_ adView: GADBannerView) {
+    if let adNetworkClassName = adView.adNetworkClassName {
       NSLog("adViewWillLeaveApplication: \(adNetworkClassName)")
     }
   }
   
-  func adViewWillPresentScreen(adView: GADBannerView!) {
-    if let adNetworkClassName = adView?.adNetworkClassName {
+  func adViewWillPresentScreen(_ adView: GADBannerView) {
+    if let adNetworkClassName = adView.adNetworkClassName {
       NSLog("adViewWillPresentScreen: \(adNetworkClassName)")
     }
   }
   
-  func adViewWillDismissScreen(adView: GADBannerView!) {
-    if let adNetworkClassName = adView?.adNetworkClassName {
+  func adViewWillDismissScreen(_ adView: GADBannerView) {
+    if let adNetworkClassName = adView.adNetworkClassName {
       NSLog("adViewWillDismissScreen: \(adNetworkClassName)")
     }
   }
   
-  func adViewDidDismissScreen(adView: GADBannerView!) {
-    if let adNetworkClassName = adView?.adNetworkClassName {
+  func adViewDidDismissScreen(_ adView: GADBannerView) {
+    if let adNetworkClassName = adView.adNetworkClassName {
       NSLog("adViewDidDismissScreen: \(adNetworkClassName)")
     }
   }
@@ -157,39 +169,37 @@ class VWDFPServerViewController: UIViewController, GADBannerViewDelegate, GADInt
   
   //MARK: GADInterstitialDelegate
   
-  func interstitialDidReceiveAd(ad: GADInterstitial!) {
-    if let adNetworkClassName = ad?.adNetworkClassName {
+  func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+    if let adNetworkClassName = ad.adNetworkClassName {
       NSLog("adViewDidReceiveAd: \(adNetworkClassName)")
-      ad?.presentFromRootViewController(self)
+      ad.present(fromRootViewController: self)
     }
   }
   
-  func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {
-    if (error != nil) {
-      NSLog("interstitial:didFailToReceiveAdWithError: %@", error!.localizedDescription)
-    }
+  func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+    NSLog("interstitial:didFailToReceiveAdWithError: %@", error.localizedDescription)
   }
   
-  func interstitialWillPresentScreen(ad: GADInterstitial!) {
-    if let adNetworkClassName = ad?.adNetworkClassName {
+  func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+    if let adNetworkClassName = ad.adNetworkClassName {
       NSLog("interstitialWillPresentScreen: \(adNetworkClassName)")
     }
   }
   
-  func interstitialWillDismissScreen(ad: GADInterstitial!) {
-    if let adNetworkClassName = ad?.adNetworkClassName {
+  func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+    if let adNetworkClassName = ad.adNetworkClassName {
       NSLog("interstitialWillDismissScreen: \(adNetworkClassName)")
     }
   }
   
-  func interstitialDidDismissScreen(ad: GADInterstitial!) {
-    if let adNetworkClassName = ad?.adNetworkClassName {
+  func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    if let adNetworkClassName = ad.adNetworkClassName {
       NSLog("interstitialDidDismissScreen: \(adNetworkClassName)")
     }
   }
   
-  func interstitialWillLeaveApplication(ad: GADInterstitial!) {
-    if let adNetworkClassName = ad?.adNetworkClassName {
+  func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+    if let adNetworkClassName = ad.adNetworkClassName {
       NSLog("interstitialWillLeaveApplication: \(adNetworkClassName)")
     }
   }

@@ -50,12 +50,11 @@ typedef void (^VWRequestBoundsCompletionHandler)(BOOL completed, CGRect availabl
 
 @class VWAdvertView;
 
-/*
+/*!
  * Delegate methods for handling display and removal of the ad view.
  * Your view controller should display or hide the ad view in a manner
  * appropriate for your UI.
  */
-
 @protocol VWAdvertViewDelegate
 
 @optional
@@ -105,6 +104,10 @@ typedef void (^VWRequestBoundsCompletionHandler)(BOOL completed, CGRect availabl
 @end
 
 
+/*!
+ * The VWAdvertView class represents an ad view. You can insert this view directly into your view hierarchy.
+ *
+ */
 @interface VWAdvertView : VWAdContainerView
 
 /*!
@@ -225,6 +228,14 @@ typedef void (^VWRequestBoundsCompletionHandler)(BOOL completed, CGRect availabl
  * you can use method `setScrollableDataWithScrollView:` instead of this one.
  */
 - (void)setScrollableFrame:(CGRect)frame size:(CGSize)size offset:(CGPoint)offset adViewFrame:(CGRect)adViewFrame;
+
+
+/*!
+ * (Optional) This option must be enabled for a "native ad", in addition to setting unexpandedLayout and expandedLayout,
+ * if the ad is used in a cell of some kind of listing view (table view, collection view) where internal ad should fill
+ * the whole ad container.
+ */
+- (void)setListingMode:(BOOL)enabled;
 
 @end
 

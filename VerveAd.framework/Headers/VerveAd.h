@@ -25,9 +25,3 @@ FOUNDATION_EXPORT const unsigned char VerveAdVersionString[];
 #import <VerveAd/VWSplashAdView.h>
 #import <VerveAd/VWSplashAdManager.h>
 #import <VerveAd/VWFullscreenAdViewController.h>
-#import <VerveAd/VWAdminFunctionsManager.h>
-
-// Deprecated:
-#import <VerveAd/VWInterstitial.h>
-#import <VerveAd/VWInterstitialManager.h>
-#import <VerveAd/VWSplashAdvertView.h>

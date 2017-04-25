@@ -15,7 +15,6 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   var inlineAdView : VWAdvertView?
   var interstitial: VWInterstitialAd?
   
-  
   //MARK: View Lifecycle
   
   override func viewDidLoad() {
@@ -28,114 +27,120 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   //MARK: - Banner Ads
   
   func addBannerAdView() {
-    guard bannerAdView == nil else { return }
+    guard self.bannerAdView == nil else { return }
     
-    let adSize = UI_USER_INTERFACE_IDIOM() == .Pad ? kVWAdSizeLeaderboard : kVWAdSizeBanner
+    let adSize = UI_USER_INTERFACE_IDIOM() == .pad ? kVWAdSizeLeaderboard : kVWAdSizeBanner
     
-    bannerAdView = VWAdvertView(size: adSize)
-    bannerAdView?.adPosition = VWAdvertPositionBottom
-    bannerAdView?.delegate = self
-    bannerAdView?.backgroundColor = .grayColor()
+    guard let tabBarHeight = tabBarController?.tabBar.frame.size.height else {
+      return
+    }
+    
+    let bannerAdView = VWAdvertView(size: adSize)
+    bannerAdView.adPosition = VWAdvertPositionBottom
+    bannerAdView.delegate = self
+    bannerAdView.backgroundColor = .gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = bannerAdView!.sizeThatFits(bounds.size)
-    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarController!.tabBar.frame.size.height
+    adFrame.size = bannerAdView.sizeThatFits(bounds.size)
+    adFrame.origin.y = bounds.size.height - adFrame.size.height - tabBarHeight
     
-    bannerAdView?.frame = adFrame
+    bannerAdView.frame = adFrame
     
-    self.view?.addSubview(bannerAdView!)
+    view.addSubview(bannerAdView)
     
+    self.bannerAdView = bannerAdView
   }
   
   @IBAction func requestBannerAd() {
-    if let bannerAdView = bannerAdView {
-      bannerAdView.loadRequest(VWAdRequest(contentCategoryID : .NewsAndInformation))
-    }
+    bannerAdView?.load(VWAdRequest(contentCategoryID : .newsAndInformation))
   }
   
   
   //MARK: - Inline Ads
   
   func addInlineAdView() {
-    guard inlineAdView == nil else { return }
+    guard self.inlineAdView == nil else { return }
     
-    inlineAdView = VWAdvertView(size: kVWAdSizeMediumRectangle)
+    let inlineAdView = VWAdvertView(size: kVWAdSizeMediumRectangle)
     
-    inlineAdView?.adPosition = VWAdvertPositionInline
-    inlineAdView?.delegate = self
-    inlineAdView?.backgroundColor = .grayColor()
+    inlineAdView.adPosition = VWAdvertPositionInline
+    inlineAdView.delegate = self
+    inlineAdView.backgroundColor = .gray
     
     let bounds = view.bounds
     var adFrame = CGRect.zero
     
-    adFrame.size = inlineAdView!.sizeThatFits(bounds.size)
-    inlineAdView?.frame = CGRectMake((bounds.size.width - adFrame.size.width)/2, (bounds.size.height - adFrame.size.height)/2, adFrame.size.width, adFrame.size.height)
+    adFrame.size = inlineAdView.sizeThatFits(bounds.size)
+    inlineAdView.frame = CGRect(
+      x: (bounds.size.width - adFrame.size.width)/2,
+      y: (bounds.size.height - adFrame.size.height)/2,
+      width: adFrame.size.width,
+      height: adFrame.size.height)
     
-    self.view?.addSubview(inlineAdView!)
+    view.addSubview(inlineAdView)
+    
+    self.inlineAdView = inlineAdView
   }
   
   @IBAction func requestInlineAd() {
-    if let inlineAdView = inlineAdView {
-      inlineAdView.loadRequest(VWAdRequest(contentCategoryID : .NewsAndInformation))
-    }
+    inlineAdView?.load(VWAdRequest(contentCategoryID : .newsAndInformation))
   }
-  
   
   //MARK: - Interstitial Ads
   
   @IBAction func requestInterstitialAd() {
-    let adSize = UI_USER_INTERFACE_IDIOM() == .Pad ? VWInterstitialAdSizePad : VWInterstitialAdSizePhone
+    let adSize = UI_USER_INTERFACE_IDIOM() == .pad ? VWInterstitialAdSizePad : VWInterstitialAdSizePhone
     
     interstitial = VWInterstitialAd(size: adSize)
     interstitial?.delegate = self
     
-    let adRequest = VWAdRequest(contentCategoryID: .NewsAndInformation)
+    let adRequest = VWAdRequest(contentCategoryID: .newsAndInformation)
     
-    interstitial?.loadRequest(adRequest)
+    interstitial?.load(adRequest)
   }
   
   // MARK: - VWAdvertViewDelegate
   
-  func advertViewDidReceiveAd(adView: VWAdvertView) {
+  func advertViewDidReceiveAd(_ adView: VWAdvertView) {
     NSLog("adViewDidReceiveAd: %@", adView)
   }
   
-  func advertView(adView: VWAdvertView, didFailToReceiveAdWithError error: NSError?) {
-    if (error != nil) {
-      NSLog("didFailToReceiveAdWithError: %@", error!)
+  func advertView(_ adView: VWAdvertView, didFailToReceiveAdWithError error: Error?) {
+    if let error = error as? NSError {
+      NSLog("didFailToReceiveAdWithError: %@", error)
     }
   }
   
   
   // MARK: - VWInterstitialDelegate
-  func interstitialAdReceiveAd(interstitialAd: VWInterstitialAd) {
+  func interstitialAdReceive(_ interstitialAd: VWInterstitialAd) {
     NSLog("interstitialAdReceiveAd: %ld", interstitialAd)
     
-    interstitial?.presentFromViewController(self)
+    interstitial?.present(from: self)
   }
   
-  func interstitialAd(interstitialAd: VWInterstitialAd, didFailToReceiveAdWithError error: NSError?) {
-    if (error != nil) {
-      NSLog("dismissInterstitialViewControllerVerveInterstitial: %@", error!)
+  func interstitialAd(_ interstitialAd: VWInterstitialAd, didFailToReceiveAdWithError error: Error?) {
+    if let error = error as? NSError {
+      NSLog("dismissInterstitialViewControllerVerveInterstitial: %@", error)
     }
     
     interstitial = nil
   }
   
-  func interstitialAdWillPresentAd(interstitialAd: VWInterstitialAd) {
+  func interstitialAdWillPresent(_ interstitialAd: VWInterstitialAd) {
     NSLog("interstitialAdWillPresentAd: %ld", interstitialAd);
   }
   
-  func interstitialAdDidDismissAd(interstitialAd: VWInterstitialAd) {
+  func interstitialAdDidDismiss(_ interstitialAd: VWInterstitialAd) {
     NSLog("interstitialAdDidDismissAd: %ld", interstitialAd);
-    self.interstitial = nil;
+    interstitial = nil;
   }
   
-  func interstitialAdWillLeaveApplication(interstitialAd: VWInterstitialAd) {
+  func interstitialAdWillLeaveApplication(_ interstitialAd: VWInterstitialAd) {
     NSLog("interstitialAdWillLeaveApplication: %ld", interstitialAd);
-    self.interstitial = nil;
+    interstitial = nil;
   }
 }
 

@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+  VWSplashAdManager helps you to configure and conform to splash loading policy. 
+  You can setup a policy on application launch.
+ */
 @interface VWSplashAdManager : NSObject
 
 /// By default the manager is enabled.
