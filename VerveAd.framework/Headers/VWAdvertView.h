@@ -27,7 +27,8 @@ typedef enum {
   VWAdvertPositionUnknown = 0,
   VWAdvertPositionTop,
   VWAdvertPositionInline,
-  VWAdvertPositionBottom
+  VWAdvertPositionBottom,
+  VWAdvertPositionListing
 } VWAdvertPosition;
 
 

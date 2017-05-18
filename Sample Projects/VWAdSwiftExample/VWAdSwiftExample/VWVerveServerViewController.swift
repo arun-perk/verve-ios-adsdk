@@ -108,7 +108,7 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   }
   
   func advertView(_ adView: VWAdvertView, didFailToReceiveAdWithError error: Error?) {
-    if let error = error as? NSError {
+    if let error = error as NSError? {
       NSLog("didFailToReceiveAdWithError: %@", error)
     }
   }
@@ -122,7 +122,7 @@ class VWVerveServerViewController: UIViewController, VWAdvertViewDelegate, VWInt
   }
   
   func interstitialAd(_ interstitialAd: VWInterstitialAd, didFailToReceiveAdWithError error: Error?) {
-    if let error = error as? NSError {
+    if let error = error as NSError? {
       NSLog("dismissInterstitialViewControllerVerveInterstitial: %@", error)
     }
     
